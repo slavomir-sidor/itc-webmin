@@ -1,0 +1,230 @@
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>sk.itcloud</groupId>
+		<artifactId>itc-webmin</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>itc-webmin-backend</artifactId>
+
+	<properties>
+
+		<apache.httpclient.version>4.5.1</apache.httpclient.version>
+
+		<axis2.wsdl2code.wsdlFile>${basedir}/model/WSDL/Forpsi/ProductCatalogue.wsdl</axis2.wsdl2code.wsdlFile>
+		<axis2.wsdl2code.generateAllClasses>true</axis2.wsdl2code.generateAllClasses>
+		<axis2.wsdl2code.overWrite>true</axis2.wsdl2code.overWrite>
+		<axis2.wsdl2code.package>${project.groupId}.hub.service</axis2.wsdl2code.package>
+		<axis2.wsdl2code.language>java</axis2.wsdl2code.language>
+		<axis2.wsdl2code.generateServicesXml>true</axis2.wsdl2code.generateServicesXml>
+		<axis2.wsdl2code.generateServerSide>true</axis2.wsdl2code.generateServerSide>
+		<axis2.wsdl2code.databindingName>adb</axis2.wsdl2code.databindingName>
+		<axis2.wsdl2code.generateServerSideInterface>true</axis2.wsdl2code.generateServerSideInterface>
+		<axis2.wsdl2code.generateTestCase>true</axis2.wsdl2code.generateTestCase>
+		<axis2.wsdl2code.allPorts>true</axis2.wsdl2code.allPorts>
+		<axis2.wsdl2code.syncMode>both</axis2.wsdl2code.syncMode>
+		<axis2.wsdl2code.outputDirectory>${project.build.sourceDirectory}</axis2.wsdl2code.outputDirectory>
+
+	</properties>
+
+	<build>
+
+		<plugins>
+
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+
+				<configuration>
+					<source>${project.source.version}</source>
+					<target>${project.target.version}</target>
+				</configuration>
+
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-wsdl2code-maven-plugin</artifactId>
+				<version>${axis2.version}</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>simple-server-maven-plugin</artifactId>
+				<version>${axis2.version}</version>
+			</plugin>
+
+			<plugin>
+
+				<groupId>org.apache.axis2</groupId>
+				<artifactId>axis2-aar-maven-plugin</artifactId>
+				<version>${axis2.version}</version>
+
+				<configuration>
+					<servicesXmlFile>src/main/resources/services/META-INF/services.xml</servicesXmlFile>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>generates-aar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>aar</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>addressing</artifactId>
+			<version>${axis2.version}</version>
+			<type>mar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-codegen</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-java2wsdl</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-java2wsdl-maven-plugin</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-json</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-metadata</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-adb</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-adb-codegen</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-ant-plugin</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-base</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-http</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-local</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-clustering</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-aar-maven-plugin</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-wsdl2code-maven-plugin</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-transport-mail</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-repo-maven-plugin</artifactId>
+			<version>${axis2.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>soapmonitor</artifactId>
+			<version>${axis2.version}</version>
+			<type>mar</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${apache.httpclient.version}</version>
+		</dependency>
+
+	</dependencies>
+	
+
+</project>
