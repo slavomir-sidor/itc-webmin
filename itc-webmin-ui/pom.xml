@@ -16,50 +16,65 @@
 	<packaging>war</packaging>
 
 	<dependencies>
-		<!-- Versions for these are configured in the parent POM -->
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-server</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-push</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-themes</artifactId>
 		</dependency>
 
-		<!-- Custom components -->
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>itc-webmin-widgetset</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
-		<!-- Bean validation implementation -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>5.1.0.CR1</version>
 		</dependency>
 
-		<!-- Testing -->
+		<dependency>
+			<groupId>javax.xml</groupId>
+			<artifactId>jaxrpc-api</artifactId>
+			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlrpc</groupId>
+			<artifactId>xmlrpc-client</artifactId>
+			<version>3.1.3</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
+
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -72,6 +87,7 @@
 						WEB-INF/classes/VAADIN/widgetsets/WEB-INF/**</packagingExcludes>
 				</configuration>
 			</plugin>
+
 			<!-- The Jetty plugin allows us to easily test the development build by running jetty:run on the command line. -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
@@ -81,6 +97,7 @@
 					<scanIntervalSeconds>2</scanIntervalSeconds>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-maven-plugin</artifactId>
@@ -102,6 +119,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<!-- TODO remove? -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -128,11 +146,13 @@
 					</execution>
 				</executions>
 			</plugin>
+
 		</plugins>
+
 		<pluginManagement>
+
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
-				<!-- TODO Remove when http://dev.vaadin.com/ticket/14924 is resolved -->
+
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -158,8 +178,11 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
+
 			</plugins>
+
 		</pluginManagement>
+
 	</build>
 
 </project>

@@ -1,41 +1,68 @@
 package sk.itcloud.webmin;
 
-import com.google.gwt.user.client.ui.HorizontalPanel;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.apache.xmlrpc.XmlRpcException;
+import org.apache.xmlrpc.client.XmlRpcClient;
+import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.TreeTable;
 import com.vaadin.ui.VerticalLayout;
 
-public class ServerView extends VerticalLayout implements View {
+public class ServerView extends VerticalLayout implements View
+{
 	public static final String VIEW_NAME = "Servers";
 
-	public ServerView() {
+	public ServerView()
+	{
 
 		super();
 
 		setSizeFull();
-
 		setWidth("100%");
 		setHeight("100%");
 
+		XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
+		URL url;
+
+		try
+		{
+			url = new URL("http", "127.0.0.1", 10000, "/xmlrpc.cgi");
+			config.setServerURL(url);
+			config.setBasicUserName("root");
+			config.setBasicPassword("jahman");
+
+			XmlRpcClient client = new XmlRpcClient();
+			client.setConfig(config);
+
+			Object[] params = new Object[] {};
+
+			try
+			{
+				Object[] results = (Object[]) client.execute("cron::list_cron_jobs", params);
+			} catch (XmlRpcException e)
+			{
+				e.printStackTrace();
+			}
+
+		} catch (MalformedURLException e1)
+		{
+			e1.printStackTrace();
+		}
+
+		TreeTable serverBrowserTree = new TreeTable();
+		serverBrowserTree.setSizeFull();
+		serverBrowserTree.setSelectable(true);
+		serverBrowserTree.addContainerProperty("Servers", String.class, "");
+
 		HorizontalLayout serverBrowser = new HorizontalLayout();
+		serverBrowser.addComponent(serverBrowserTree);
+
 		HorizontalLayout serverDetail = new HorizontalLayout();
-
-		TreeTable sample = new TreeTable();
-		sample.setSizeFull();
-		sample.setSelectable(true);
-		sample.addContainerProperty("Servers", String.class, "");
-
-		//XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-		// config.setServerURL(new URL("http://127.0.0.1:8080/xmlrpc"));
-		// XmlRpcClient client = new XmlRpcClient();
-		// client.setConfig(config);
-		// Object[] params = new Object[] { new Integer(33), new Integer(9) };
-		// Integer result = (Integer) client.execute("Calculator.add", params);
-
-		serverBrowser.addComponent(sample);
 
 		addComponent(serverBrowser);
 		addComponent(serverDetail);
@@ -46,6 +73,7 @@ public class ServerView extends VerticalLayout implements View {
 	}
 
 	@Override
-	public void enter(ViewChangeEvent event) {
+	public void enter(ViewChangeEvent event)
+	{
 	}
 }

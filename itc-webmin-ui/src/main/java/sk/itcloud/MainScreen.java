@@ -5,7 +5,8 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
-import sk.itcloud.*;
+import sk.itcloud.Menu;
+import sk.itcloud.WorkbenchView;
 import sk.itcloud.webmin.ServerView;
 
 public class MainScreen extends HorizontalLayout {
@@ -22,15 +23,15 @@ public class MainScreen extends HorizontalLayout {
 
 		final Navigator navigator = new Navigator(ui, viewContainer);
 		navigator.setErrorView(ErrorView.class);
+		navigator.addViewChangeListener(viewChangeListener);
 
 		Menu menu = new Menu(navigator);
 		menu.addView(new WorkbenchView(), WorkbenchView.VIEW_NAME, WorkbenchView.VIEW_NAME, FontAwesome.DASHBOARD);
-		menu.addView(new ServerView(), ServerView.VIEW_NAME,ServerView.VIEW_NAME, FontAwesome.BUILDING);
-
-		navigator.addViewChangeListener(viewChangeListener);
+		menu.addView(new ServerView(), ServerView.VIEW_NAME, ServerView.VIEW_NAME, FontAwesome.BUILDING);
 
 		addComponent(menu);
 		addComponent(viewContainer);
+
 		setExpandRatio(viewContainer, 1);
 		setSizeFull();
 
@@ -47,7 +48,7 @@ public class MainScreen extends HorizontalLayout {
 
 		@Override
 		public void afterViewChange(ViewChangeEvent event) {
-			menu.setActiveView(event.getViewName());
+			//menu.setActiveView(event.getViewName());
 		}
 
 	};
