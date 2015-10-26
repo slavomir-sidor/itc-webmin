@@ -3,6 +3,8 @@ package sk.itcloud;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.xmlrpc.XmlRpcException;
+
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.server.FontAwesome;
@@ -20,6 +22,8 @@ import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.Command;
 import com.vaadin.ui.MenuBar.MenuItem;
 import com.vaadin.ui.themes.ValoTheme;
+
+import sk.itcloud.webmin.WebminAPI;
 
 /**
  * Responsive navigation menu presenting a list of available views to the user.
@@ -51,7 +55,10 @@ public class Menu extends CssLayout {
 		top.setDefaultComponentAlignment(Alignment.MIDDLE_LEFT);
 		top.addStyleName(ValoTheme.MENU_TITLE);
 		top.setSpacing(true);
-		Label title = new Label("ITC Webmin");
+
+		WebminAPI api = new WebminAPI();
+
+		Label title = new Label("ITC Webmin ");
 		title.addStyleName(ValoTheme.LABEL_H3);
 		top.addComponent(title);
 		menuPart.addComponent(top);
@@ -67,6 +74,7 @@ public class Menu extends CssLayout {
 				}
 			}
 		});
+
 		showMenu.addStyleName(ValoTheme.BUTTON_PRIMARY);
 		showMenu.addStyleName(ValoTheme.BUTTON_SMALL);
 		showMenu.addStyleName(VALO_MENU_TOGGLE);
