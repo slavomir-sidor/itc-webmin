@@ -22,7 +22,7 @@ public class ProjectView extends VerticalLayout implements View {
 		setWidth("100%");
 		setHeight("100%");
 
-		addComponent(new ServerTabSheet());
+		addComponent(new ProjectTabSheet());
 	}
 
 	@Override

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -12,20 +10,27 @@
 	<name>itc-webmin-parent</name>
 
 	<properties>
+
 		<vaadin.version>7.5.7</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<jetty.plugin.version>9.2.3.v20140905</jetty.plugin.version>
 		<vaadin-jpacontainer.version>3.2.0</vaadin-jpacontainer.version>
+		<jpacontainer.version>2.0.0</jpacontainer.version>
+		<validation-api.version>1.1.0.Final</validation-api.version>
+		<mysql-connector.version>5.1.37</mysql-connector.version>
+		<hibernate-jpa.version>1.0.0.Final</hibernate-jpa.version>
 		<axis2.version>1.7.0-SNAPSHOT</axis2.version>
 		<junit.version>4.12</junit.version>
 		<project.source.version>1.7</project.source.version>
 		<project.target.version>1.7</project.target.version>
 		<project.encoding>UTF-8</project.encoding>
+
 	</properties>
 
 	<build>
 
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -36,6 +41,7 @@
 					<target>${project.target.version}</target>
 				</configuration>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -44,6 +50,7 @@
 					<encoding>${project.encoding}</encoding>
 				</configuration>
 			</plugin>
+
 		</plugins>
 
 		<pluginManagement>
@@ -73,6 +80,7 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+
 	</build>
 
 	<dependencyManagement>
@@ -114,6 +122,7 @@
 		<module>itc-webmin-widgetset</module>
 		<module>itc-webmin-ui</module>
 		<module>itc-webmin-production</module>
+		<module>itc-webmin-jpa</module>
 	</modules>
 
 </project>

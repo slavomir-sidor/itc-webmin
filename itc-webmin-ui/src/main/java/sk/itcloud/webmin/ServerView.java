@@ -36,13 +36,13 @@ public class ServerView extends VerticalLayout implements View {
 
 		HorizontalLayout serverDetail = new HorizontalLayout();
 
-		WebminAPI api = new WebminAPI();
+		/*WebminAPI api = new WebminAPI();
 		Object[] results = api.getThemes();
 
 		for (int i = 0; 0 < results.length; i++) {
 			serverDetail.addComponent(new Label());
 		}
-
+*/
 		addComponent(serverBrowser);
 		addComponent(serverDetail);
 

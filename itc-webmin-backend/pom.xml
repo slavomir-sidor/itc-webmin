@@ -89,13 +89,7 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>1.1.0.Final</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.vaadin.addon</groupId>
-			<artifactId>jpacontainer</artifactId>
-			<version>${vaadin-jpacontainer.version}</version>
+			<version>${validation-api.version}</version>
 		</dependency>
 
 		<dependency>
