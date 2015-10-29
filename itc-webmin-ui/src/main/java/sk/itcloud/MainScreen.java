@@ -5,8 +5,11 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
+
 import sk.itcloud.Menu;
 import sk.itcloud.WorkbenchView;
+import sk.itcloud.ci.CIView;
 import sk.itcloud.project.ProjectView;
 import sk.itcloud.webmin.ServerView;
 
@@ -29,6 +32,8 @@ public class MainScreen extends HorizontalLayout {
 		Menu menu = new Menu(navigator);
 		menu.addView(new WorkbenchView(), WorkbenchView.VIEW_NAME, WorkbenchView.VIEW_NAME, FontAwesome.DASHBOARD);
 		menu.addView(new ProjectView(), ProjectView.VIEW_NAME, ProjectView.VIEW_NAME, FontAwesome.ARCHIVE);
+		menu.addView(new CIView(), CIView.VIEW_NAME, CIView.VIEW_NAME, FontAwesome.ARCHIVE);
+		
 		//menu.addView(new ServerView(), ServerView.VIEW_NAME, ServerView.VIEW_NAME, FontAwesome.BUILDING);
 
 		addComponent(menu);

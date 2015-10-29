@@ -24,7 +24,7 @@ public class ProjectTabSheet extends TabSheet {
 		setWidth("100%");
 		setHeight("100%");
 
-		addTab(new ProjectTreeTable()).setCaption("Projects");
+		addTab(new ProjectITCTabSheet()).setCaption("Projects");
 		addTab(new NewProjectTabSheet()).setCaption("New");
 	}
 
