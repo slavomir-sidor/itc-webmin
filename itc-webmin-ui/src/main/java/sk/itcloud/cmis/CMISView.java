@@ -1,4 +1,4 @@
-package sk.itcloud.ci;
+package sk.itcloud.cmis;
 
 import java.io.IOException;
 import java.net.URI;
@@ -14,12 +14,12 @@ import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.TreeTable;
 import org.apache.http.*;
 
-public class CIView extends TabSheet implements View
+public class CMISView extends TabSheet implements View
 {
 
-	public static final String VIEW_NAME = "CI";
+	public static final String VIEW_NAME = "Documents";
 
-	public CIView()
+	public CMISView()
 	{
 
 		super();

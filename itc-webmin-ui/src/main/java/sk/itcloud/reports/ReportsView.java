@@ -1,15 +1,15 @@
-package sk.itcloud.repository;
+package sk.itcloud.reports;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.TabSheet;
 
-public class RepositoryView extends TabSheet implements View
+public class ReportsView extends TabSheet implements View
 {
 
-	public static final String VIEW_NAME = "Repositories";
+	public static final String VIEW_NAME = "Reports";
 
-	public RepositoryView()
+	public ReportsView()
 	{
 
 		super();

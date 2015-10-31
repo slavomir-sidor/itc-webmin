@@ -29,6 +29,9 @@
 		<maven.version>2.2.1</maven.version>
 		<maven-model-builder.version>3.0.4</maven-model-builder.version>
 		<apache.httpcore.version>4.3.3</apache.httpcore.version>
+		<apache.httpclient.version>4.5.1</apache.httpclient.version>
+		<chemistry-opencmis-client-impl.version>0.13.0</chemistry-opencmis-client-impl.version>
+		
 		<junit.version>4.12</junit.version>
 		<project.source.version>1.7</project.source.version>
 		<project.target.version>1.7</project.target.version>

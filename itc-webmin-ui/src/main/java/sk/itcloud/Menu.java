@@ -26,7 +26,8 @@ import com.vaadin.ui.themes.ValoTheme;
 /**
  * Responsive navigation menu presenting a list of available views to the user.
  */
-public class Menu extends CssLayout {
+public class Menu extends CssLayout
+{
 
 	private static final String VALO_MENUITEMS = "valo-menuitems";
 
@@ -42,7 +43,8 @@ public class Menu extends CssLayout {
 
 	private CssLayout menuPart;
 
-	public Menu(Navigator navigator) {
+	public Menu(Navigator navigator)
+	{
 
 		this.navigator = navigator;
 		setPrimaryStyleName(ValoTheme.MENU_ROOT);
@@ -56,20 +58,24 @@ public class Menu extends CssLayout {
 		top.addStyleName(ValoTheme.MENU_TITLE);
 		top.setSpacing(true);
 
-		Label title = new Label("ITC");
+		Label title = new Label("ITC Projects");
 		title.addStyleName(ValoTheme.LABEL_H3);
 		top.addComponent(title);
 		menuPart.addComponent(top);
 
 		// button for toggling the visibility of the menu when on a small screen
-		final Button showMenu = new Button("Menu", new ClickListener() {
+		final Button showMenu = new Button("Menu", new ClickListener()
+		{
 
 			@Override
-			public void buttonClick(final ClickEvent event) {
+			public void buttonClick(final ClickEvent event)
+			{
 
-				if (menuPart.getStyleName().contains(VALO_MENU_VISIBLE)) {
+				if (menuPart.getStyleName().contains(VALO_MENU_VISIBLE))
+				{
 					menuPart.removeStyleName(VALO_MENU_VISIBLE);
-				} else {
+				} else
+				{
 					menuPart.addStyleName(VALO_MENU_VISIBLE);
 				}
 
@@ -90,12 +96,22 @@ public class Menu extends CssLayout {
 
 		// logout menu item
 		MenuBar logoutMenu = new MenuBar();
-		logoutMenu.addItem("Logout", FontAwesome.SIGN_OUT, new Command() {
+		logoutMenu.addItem("Logout", FontAwesome.SIGN_OUT, new Command()
+		{
 
 			@Override
-			public void menuSelected(MenuItem selectedItem) {
+			public void menuSelected(MenuItem selectedItem)
+			{
 				VaadinSession.getCurrent().getSession().invalidate();
 				Page.getCurrent().reload();
+			}
+		});
+		logoutMenu.addItem("Settings", new Command()
+		{
+			@Override
+			public void menuSelected(MenuItem selectedItem)
+			{
+				
 			}
 		});
 
@@ -121,7 +137,8 @@ public class Menu extends CssLayout {
 	 * @param icon
 	 *            view icon in the menu
 	 */
-	public void addView(View view, final String name, String caption, Resource icon) {
+	public void addView(View view, final String name, String caption, Resource icon)
+	{
 		navigator.addView(name, view);
 		createViewButton(name, caption, icon);
 	}
@@ -141,17 +158,21 @@ public class Menu extends CssLayout {
 	 * @param icon
 	 *            view icon in the menu
 	 */
-	public void addView(Class<? extends View> viewClass, final String name, String caption, Resource icon) {
+	public void addView(Class<? extends View> viewClass, final String name, String caption, Resource icon)
+	{
 		navigator.addView(name, viewClass);
 		createViewButton(name, caption, icon);
 	}
 
-	private void createViewButton(final String name, String caption, Resource icon) {
+	private void createViewButton(final String name, String caption, Resource icon)
+	{
 
-		Button button = new Button(caption, new ClickListener() {
+		Button button = new Button(caption, new ClickListener()
+		{
 
 			@Override
-			public void buttonClick(ClickEvent event) {
+			public void buttonClick(ClickEvent event)
+			{
 				navigator.navigateTo(name);
 
 			}
@@ -169,12 +190,15 @@ public class Menu extends CssLayout {
 	 * @param viewName
 	 *            the name of the view to show as active
 	 */
-	public void setActiveView(String viewName) {
-		for (Button button : viewButtons.values()) {
+	public void setActiveView(String viewName)
+	{
+		for (Button button : viewButtons.values())
+		{
 			button.removeStyleName("selected");
 		}
 		Button selected = viewButtons.get(viewName);
-		if (selected != null) {
+		if (selected != null)
+		{
 			selected.addStyleName("selected");
 		}
 		menuPart.removeStyleName(VALO_MENU_VISIBLE);
