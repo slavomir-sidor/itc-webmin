@@ -9,6 +9,9 @@
         <dependent-module archiveName="itc-webmin-backend-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/itc-webmin-backend/itc-webmin-backend">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="jenkins-client-0.3.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/jenkins-client/jenkins-client">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="itc-webmin-ui"/>
         <property name="java-output-path" value="/itc-webmin-ui/target/classes"/>
         <property name="component.exclusion.patterns" value="WEB-INF/classes/VAADIN/gwt-unitCache/**,WEB-INF/classes/VAADIN/widgetsets/WEB-INF/**"/>

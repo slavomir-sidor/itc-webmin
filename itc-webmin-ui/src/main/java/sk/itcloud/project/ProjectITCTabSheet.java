@@ -21,12 +21,10 @@ public class ProjectITCTabSheet extends TabSheet {
 
 		super();
 		setSizeFull();
-
 		setWidth("100%");
 		setHeight("100%");
 
-
-		addTab(new Label("Overview")).setCaption("Overview");
+		addTab(new ProjectTreeTable()).setCaption("Overview");
 		addTab(new Label("Overview")).setCaption("CI");
 		addTab(new Label("Overview")).setCaption("Issue Management");
 		addTab(new Label("Overview")).setCaption("Source Repository");

@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>sk.itcloud</groupId>
+	<parent>
+		<groupId>sk.itcloud</groupId>
+		<artifactId>itc-project</artifactId>
+		<version>0.0.20-SNAPSHOT</version>
+	</parent>
+
 	<artifactId>itc-webmin</artifactId>
 	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
@@ -20,6 +26,9 @@
 		<mysql-connector.version>5.1.37</mysql-connector.version>
 		<hibernate-jpa.version>1.0.0.Final</hibernate-jpa.version>
 		<axis2.version>1.7.0-SNAPSHOT</axis2.version>
+		<maven.version>2.2.1</maven.version>
+		<maven-model-builder.version>3.0.4</maven-model-builder.version>
+		<apache.httpcore.version>4.3.3</apache.httpcore.version>
 		<junit.version>4.12</junit.version>
 		<project.source.version>1.7</project.source.version>
 		<project.target.version>1.7</project.target.version>

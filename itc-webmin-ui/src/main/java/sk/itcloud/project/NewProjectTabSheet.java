@@ -24,6 +24,8 @@ public class NewProjectTabSheet extends TabSheet {
 		addTab(new Label("Overview")).setCaption("Source Repository");
 		addTab(new Label("Overview")).setCaption("Artifacts");
 		addTab(new Label("Overview")).setCaption("Reports");
+		
+		
 	}
 
 }

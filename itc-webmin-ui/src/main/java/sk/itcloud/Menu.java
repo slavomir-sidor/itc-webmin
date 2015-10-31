@@ -43,8 +43,10 @@ public class Menu extends CssLayout {
 	private CssLayout menuPart;
 
 	public Menu(Navigator navigator) {
+
 		this.navigator = navigator;
 		setPrimaryStyleName(ValoTheme.MENU_ROOT);
+
 		menuPart = new CssLayout();
 		menuPart.addStyleName(ValoTheme.MENU_PART);
 
@@ -54,20 +56,23 @@ public class Menu extends CssLayout {
 		top.addStyleName(ValoTheme.MENU_TITLE);
 		top.setSpacing(true);
 
-		Label title = new Label("ITC Webmin ");
+		Label title = new Label("ITC");
 		title.addStyleName(ValoTheme.LABEL_H3);
 		top.addComponent(title);
 		menuPart.addComponent(top);
 
 		// button for toggling the visibility of the menu when on a small screen
 		final Button showMenu = new Button("Menu", new ClickListener() {
+
 			@Override
 			public void buttonClick(final ClickEvent event) {
+
 				if (menuPart.getStyleName().contains(VALO_MENU_VISIBLE)) {
 					menuPart.removeStyleName(VALO_MENU_VISIBLE);
 				} else {
 					menuPart.addStyleName(VALO_MENU_VISIBLE);
 				}
+
 			}
 		});
 
@@ -75,6 +80,7 @@ public class Menu extends CssLayout {
 		showMenu.addStyleName(ValoTheme.BUTTON_SMALL);
 		showMenu.addStyleName(VALO_MENU_TOGGLE);
 		showMenu.setIcon(FontAwesome.NAVICON);
+
 		menuPart.addComponent(showMenu);
 
 		// container for the navigation buttons, which are added by addView()
@@ -141,6 +147,7 @@ public class Menu extends CssLayout {
 	}
 
 	private void createViewButton(final String name, String caption, Resource icon) {
+
 		Button button = new Button(caption, new ClickListener() {
 
 			@Override

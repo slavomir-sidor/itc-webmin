@@ -6,18 +6,24 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.themes.ValoTheme;
 
 import sk.itcloud.Menu;
 import sk.itcloud.WorkbenchView;
 import sk.itcloud.ci.CIView;
 import sk.itcloud.project.ProjectView;
+import sk.itcloud.repository.RepositoryView;
+import sk.itcloud.settings.SettingsView;
 import sk.itcloud.webmin.ServerView;
 
-public class MainScreen extends HorizontalLayout {
+public class MainScreen extends HorizontalLayout
+{
 
 	private Menu menu;
 
-	public MainScreen(ITCWebminUI ui) {
+	public MainScreen(ITCWebminUI ui)
+	{
 
 		setStyleName("main-screen");
 
@@ -33,29 +39,45 @@ public class MainScreen extends HorizontalLayout {
 		menu.addView(new WorkbenchView(), WorkbenchView.VIEW_NAME, WorkbenchView.VIEW_NAME, FontAwesome.DASHBOARD);
 		menu.addView(new ProjectView(), ProjectView.VIEW_NAME, ProjectView.VIEW_NAME, FontAwesome.ARCHIVE);
 		menu.addView(new CIView(), CIView.VIEW_NAME, CIView.VIEW_NAME, FontAwesome.ARCHIVE);
-		
-		//menu.addView(new ServerView(), ServerView.VIEW_NAME, ServerView.VIEW_NAME, FontAwesome.BUILDING);
+		menu.addView(new SettingsView(), SettingsView.VIEW_NAME, SettingsView.VIEW_NAME, FontAwesome.ARCHIVE);
+		menu.addView(new RepositoryView(), RepositoryView.VIEW_NAME, RepositoryView.VIEW_NAME, FontAwesome.ARCHIVE);
+
+		// menu.addView(new ServerView(), ServerView.VIEW_NAME,
+		// ServerView.VIEW_NAME, FontAwesome.BUILDING);
 
 		addComponent(menu);
-		addComponent(viewContainer);
 
-		setExpandRatio(viewContainer, 1);
+		Label northPanelLabel = new Label("Projects");
+		northPanelLabel.addStyleName("valo-menu-title");
+
+		HorizontalLayout northPanel = new HorizontalLayout();
+		northPanel.addComponent(northPanelLabel);
+
+		VerticalLayout viewport = new VerticalLayout();
+		viewport.addComponent(northPanel);
+		viewport.addComponent(viewContainer);
+
+		addComponent(viewport);
+		setExpandRatio(viewport, 1);
 		setSizeFull();
 
 	}
 
 	// notify the view menu about view changes so that it can display which view
 	// is currently active
-	ViewChangeListener viewChangeListener = new ViewChangeListener() {
+	ViewChangeListener viewChangeListener = new ViewChangeListener()
+	{
 
 		@Override
-		public boolean beforeViewChange(ViewChangeEvent event) {
+		public boolean beforeViewChange(ViewChangeEvent event)
+		{
 			return true;
 		}
 
 		@Override
-		public void afterViewChange(ViewChangeEvent event) {
-			//menu.setActiveView(event.getViewName());
+		public void afterViewChange(ViewChangeEvent event)
+		{
+			// menu.setActiveView(event.getViewName());
 		}
 
 	};
