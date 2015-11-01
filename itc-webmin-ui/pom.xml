@@ -37,6 +37,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>auto-forms</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
+		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>itc-webmin-widgetset</artifactId>
 			<version>${project.version}</version>

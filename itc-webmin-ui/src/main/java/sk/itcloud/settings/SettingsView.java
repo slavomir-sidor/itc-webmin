@@ -18,8 +18,8 @@ public class SettingsView extends TabSheet implements View
 		setWidth("100%");
 		setHeight("100%");
 
-		addTab(new UserSettingsView(), "User Settings");
-		addTab(new UserSettingsView(), "Global Settings");
+		addTab(new Settings("/var/www/jahman/.m2/settings.xml"), "User Settings");
+		addTab(new Settings("/usr/share/maven/conf/settings.xml"), "Global Settings");
 
 	}
 
