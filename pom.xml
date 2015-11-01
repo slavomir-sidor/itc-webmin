@@ -21,6 +21,7 @@
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<jetty.plugin.version>9.2.3.v20140905</jetty.plugin.version>
 		<vaadin-jpacontainer.version>3.2.0</vaadin-jpacontainer.version>
+		<optaplanner-core.version>6.3.0.Final</optaplanner-core.version>
 		<jpacontainer.version>2.0.0</jpacontainer.version>
 		<validation-api.version>1.1.0.Final</validation-api.version>
 		<mysql-connector.version>5.1.37</mysql-connector.version>
@@ -31,7 +32,6 @@
 		<apache.httpcore.version>4.3.3</apache.httpcore.version>
 		<apache.httpclient.version>4.5.1</apache.httpclient.version>
 		<chemistry-opencmis-client-impl.version>0.13.0</chemistry-opencmis-client-impl.version>
-		
 		<junit.version>4.12</junit.version>
 		<project.source.version>1.7</project.source.version>
 		<project.target.version>1.7</project.target.version>

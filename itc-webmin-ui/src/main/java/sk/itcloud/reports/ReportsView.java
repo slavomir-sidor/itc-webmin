@@ -4,6 +4,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.TabSheet;
 
+
 public class ReportsView extends TabSheet implements View
 {
 
@@ -13,7 +14,6 @@ public class ReportsView extends TabSheet implements View
 	{
 
 		super();
-
 		setSizeFull();
 		setWidth("100%");
 		setHeight("100%");

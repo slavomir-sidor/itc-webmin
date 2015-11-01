@@ -21,8 +21,14 @@ public class ProjectView extends VerticalLayout implements View {
 		setSizeFull();
 		setWidth("100%");
 		setHeight("100%");
-
-		addComponent(new ProjectTabSheet());
+		ProjectTabSheet projectTabSheet=new ProjectTabSheet();
+		ProjectITCTabSheet projectITCTabSheet=new ProjectITCTabSheet();
+		
+		addComponent(projectTabSheet);
+		addComponent(projectITCTabSheet);
+		
+		setExpandRatio(projectTabSheet, 6);
+		setExpandRatio(projectITCTabSheet, 4);
 	}
 
 	@Override

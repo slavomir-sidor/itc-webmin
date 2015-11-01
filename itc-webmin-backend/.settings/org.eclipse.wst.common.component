@@ -2,5 +2,7 @@
     <wb-module deploy-name="itc-webmin-backend">
         <wb-resource deploy-path="/" source-path="/src/main/java"/>
         <wb-resource deploy-path="/" source-path="/src/main/resources"/>
+        <property name="context-root" value="itc-webmin-backend"/>
+        <property name="java-output-path" value="/itc-webmin-backend/target/classes"/>
     </wb-module>
 </project-modules>

@@ -1,3 +1,4 @@
+
 package sk.itcloud.settings;
 
 import com.vaadin.navigator.View;
@@ -19,7 +20,7 @@ public class SettingsView extends TabSheet implements View
 
 		addTab(new UserSettingsView(), "User Settings");
 		addTab(new UserSettingsView(), "Global Settings");
-		
+
 	}
 
 	@Override

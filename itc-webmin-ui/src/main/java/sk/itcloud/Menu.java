@@ -106,14 +106,6 @@ public class Menu extends CssLayout
 				Page.getCurrent().reload();
 			}
 		});
-		logoutMenu.addItem("Settings", new Command()
-		{
-			@Override
-			public void menuSelected(MenuItem selectedItem)
-			{
-				
-			}
-		});
 
 		logoutMenu.addStyleName("user-menu");
 		menuPart.addComponent(logoutMenu);

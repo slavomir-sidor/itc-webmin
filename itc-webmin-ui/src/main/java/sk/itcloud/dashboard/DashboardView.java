@@ -1,24 +1,22 @@
-package sk.itcloud;
+package sk.itcloud.dashboard;
+
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-public class WorkbenchView extends VerticalLayout implements View
+public class DashboardView extends VerticalLayout implements View
 {
-	public static final String VIEW_NAME = "Workbench";
+	public static final String VIEW_NAME = "Dahsboard";
 
-
-	public WorkbenchView()
+	public DashboardView()
 	{
 		super();
 
 		setSizeFull();
-
 		setWidth("100%");
 		setHeight("100%");
-		addComponent(new Label("Ahoj"));
 	}
 
 	@Override

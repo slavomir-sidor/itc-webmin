@@ -1,7 +1,7 @@
 /**
  * 
  */
-package sk.itcloud.project;
+package sk.itcloud.repository;
 
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
@@ -10,23 +10,24 @@ import com.vaadin.ui.TabSheet;
  * @author jahman
  *
  */
-public class ProjectTabSheet extends TabSheet {
+public class RepositoryTabSheet extends TabSheet
+{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1187104482453020034L;
 
-	public ProjectTabSheet() {
-
+	public RepositoryTabSheet()
+	{
 		super();
 		setSizeFull();
 
 		setWidth("100%");
 		setHeight("100%");
 
-		addTab(new ProjectTreeTable()).setCaption("Projects");
-		addTab(new NewProjectTabSheet()).setCaption("New");
+		addTab(new RepositoryTable()).setCaption("Repositories");
+		addTab(new NewRepository()).setCaption("New");
 	}
 
 }
