@@ -10,11 +10,11 @@ import sk.itcloud.Menu;
 import sk.itcloud.cmis.CMISView;
 import sk.itcloud.communication.ChatPanel;
 import sk.itcloud.dashboard.DashboardView;
+import sk.itcloud.maven.settings.views.SettingsView;
 import sk.itcloud.processes.ProcessesView;
 import sk.itcloud.project.ProjectView;
 import sk.itcloud.reports.ReportsView;
 import sk.itcloud.repository.RepositoryView;
-import sk.itcloud.settings.SettingsView;
 import sk.itcloud.tasks.TasksView;
 
 public class MainScreen extends HorizontalLayout
@@ -44,16 +44,19 @@ public class MainScreen extends HorizontalLayout
 		menu.addView(new ReportsView(), ReportsView.VIEW_NAME, ReportsView.VIEW_NAME, FontAwesome.ARCHIVE);
 		menu.addView(new RepositoryView(), RepositoryView.VIEW_NAME, RepositoryView.VIEW_NAME, FontAwesome.ARCHIVE);
 		menu.addView(new SettingsView(), SettingsView.VIEW_NAME, SettingsView.VIEW_NAME, FontAwesome.ARCHIVE);
-		
 
 		ChatPanel chatPanel = new ChatPanel();
+
+		HorizontalLayout southPanel = new HorizontalLayout();
 
 		addComponent(menu);
 		addComponent(viewContainer);
 		addComponent(chatPanel);
+		addComponent(southPanel);
 
 		setExpandRatio(viewContainer, 9);
 		setExpandRatio(chatPanel, 1);
+		setExpandRatio(southPanel, 1);
 		setSizeFull();
 
 	}

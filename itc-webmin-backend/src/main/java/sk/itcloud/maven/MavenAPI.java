@@ -28,8 +28,6 @@ public class MavenAPI
 	protected File userSettingsFile;
 
 	protected DefaultMavenSettingsBuilder settingsBuilder;
-	
-	
 
 	/**
 	 * @return the globalSettingsFileName
