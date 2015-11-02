@@ -3,6 +3,7 @@ package sk.itcloud.maven.settings.views;
 import java.util.List;
 
 import org.apache.maven.settings.Mirror;
+import org.apache.maven.settings.Repository;
 import org.apache.maven.settings.Server;
 import org.apache.maven.settings.Settings;
 
@@ -11,18 +12,11 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 
-public class PluginGroupsView extends HorizontalLayout
+public class PluginGroupsView extends Table
 {
 
-	public PluginGroupsView(List pluginGroups, int index)
+	public PluginGroupsView(List<String> pluginGroups)
 	{
-		super();
+		super("Plugin Group View", new BeanItemContainer<String>(String.class, pluginGroups));
 	}
-
-	public PluginGroupsView(Component... children)
-	{
-		super(children);
-		// TODO Auto-generated constructor stub
-	}
-
 }

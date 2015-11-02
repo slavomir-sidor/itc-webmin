@@ -13,17 +13,13 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 
-public class PluginRepositoriesView extends HorizontalLayout
+public class PluginRepositoriesView extends Table
 {
 
 	BeanItemContainer<Repository> container;
 
 	public PluginRepositoriesView(List<Repository> repositories)
 	{
-		super();
-
-		container = new BeanItemContainer<Repository>(Repository.class, repositories);
-		Table table = new Table("Plugin Repositories", container);
-		addComponent(table);
+		super("Plugin Repositories", new BeanItemContainer<Repository>(Repository.class, repositories));
 	}
 }

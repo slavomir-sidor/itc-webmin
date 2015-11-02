@@ -5,49 +5,64 @@ import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class ProfileView extends FormLayout
+public class ProfileView extends GridLayout
 {
 
-	protected Profile profile;
+	protected Profile bean;
+
+	/**
+	 * @return the bean
+	 */
+	public Profile getBean()
+	{
+		return bean;
+	}
+
+	/**
+	 * @param bean
+	 *            the bean to set
+	 */
+	public void setBean(Profile bean)
+	{
+		this.bean = bean;
+	}
 
 	protected BeanFieldGroup<Profile> beanFieldGroup;
 
-	PropertiesView properties;
+	protected PropertiesView properties;
 
-	RepositoriesView repositories;
+	protected RepositoriesView repositories;
 
-	PluginRepositoriesView pluginRepositories;
+	protected PluginRepositoriesView pluginRepositories;
 
-	Label sourceLevel;
-
-	Label id;
-
-	public ProfileView(Profile profile)
+	public ProfileView(Profile bean)
 	{
-		super();
+		super(2, 2);
 
 		setWidth("100%");
 		setHeight("100%");
 		setSizeFull();
 
-		// properties = new PropertiesView(profile.getProperties());
-		// repositories = new RepositoriesView(profile.getRepositories());
-		// pluginRepositories = new PluginRepositoriesView(profile.getPluginRepositories());
-		// sourceLevel = new Label(profile.getSourceLevel());
-
+		setBean(bean);
 		setDescription("Profile");
-		setCaption(profile.getId());
+		setCaption(bean.getId());
 		setImmediate(true);
 
-		beanFieldGroup = new BeanFieldGroup<Profile>(Profile.class);
-		beanFieldGroup.bindMemberFields(this);
+		// beanFieldGroup = new BeanFieldGroup<Profile>(Profile.class);
+		// beanFieldGroup.bindMemberFields(this);
+		// beanFieldGroup.setItemDataSource(beam);
 
-		// addComponent(sourceLevel);
+		repositories = new RepositoriesView(bean.getRepositories());
+		pluginRepositories = new PluginRepositoriesView(bean.getPluginRepositories());
+
+		addComponent(repositories);
+		addComponent(pluginRepositories);
 		// addComponent(properties);
-		// addComponent(repositories);
+
 		// addComponent(pluginRepositories);
 		// addComponent(pluginGroups);
 	}

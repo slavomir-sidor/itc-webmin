@@ -27,7 +27,10 @@ public class SettingView extends TabSheet
 		setHeight("100%");
 
 		api = new SettingsAPI(fileName);
-		List<Profile> items = api.getSettings().getProfiles();
+		Settings settings = api.getSettings();
+		List<Profile> items = settings.getProfiles();
+
+		addTab(new GeneralView(settings),"Settings");
 
 		for (int i = 0; i < items.size(); i++)
 		{

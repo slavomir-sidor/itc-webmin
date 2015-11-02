@@ -107,5 +107,4 @@ public class SettingsAPI
 			e.printStackTrace();
 		}
 	}
-
 }
