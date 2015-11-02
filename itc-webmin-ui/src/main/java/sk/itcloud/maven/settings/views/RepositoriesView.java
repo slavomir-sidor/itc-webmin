@@ -2,13 +2,29 @@ package sk.itcloud.maven.settings.views;
 
 import java.util.List;
 import org.apache.maven.settings.Repository;
+import org.apache.maven.settings.Server;
+import org.codehaus.jettison.mapped.MappedXMLStreamReader;
+
 import com.vaadin.data.util.BeanItemContainer;
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 
-public class RepositoriesView extends Table
+public class RepositoriesView extends GridMasterVertical implements View
 {
+
+	public static final String VIEW_NAME = "Repositories";
+
 	public RepositoriesView(List<Repository> repositories)
 	{
-		super("Repositories", new BeanItemContainer<Repository>(Repository.class, repositories));
+		super();
+		table.setContainerDataSource(new BeanItemContainer<Repository>(Repository.class, repositories));
+	}
+
+	@Override
+	public void enter(ViewChangeEvent event)
+	{
 	}
 }

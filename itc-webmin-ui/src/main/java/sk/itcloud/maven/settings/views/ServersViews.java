@@ -3,26 +3,23 @@ package sk.itcloud.maven.settings.views;
 import java.util.List;
 
 import org.apache.maven.settings.Server;
-import org.apache.maven.settings.Settings;
-import com.vaadin.event.ItemClickEvent;
-import com.vaadin.data.Item;
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.data.util.BeanItemContainer;
-import com.vaadin.ui.Component;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Table;
-import eu.livotov.labs.vaadin.autoforms.AutoForm;
 
-public class ServersViews extends Table
+public class ServersViews extends GridMasterVertical implements View
 {
-	BeanItemContainer<Server> items;
 
-	public ServersViews(List<Server> items)
+	public static final String VIEW_NAME = "Servers";
+
+	public ServersViews(List<Server> servers)
 	{
-		super("Servers", new BeanItemContainer<Server>(Server.class, items));
+		super();
+		table.setContainerDataSource(new BeanItemContainer<Server>(Server.class, servers));
 	}
 
-	private void onRowClick(ItemClickEvent itemClickEvent)
+	@Override
+	public void enter(ViewChangeEvent event)
 	{
-		Item item = items.getItem(itemClickEvent.getItemId());
 	}
 }

@@ -54,7 +54,7 @@ public class MainScreen extends HorizontalLayout
 		addComponent(chatPanel);
 		addComponent(southPanel);
 
-		setExpandRatio(viewContainer, 9);
+		setExpandRatio(viewContainer, 8);
 		setExpandRatio(chatPanel, 1);
 		setExpandRatio(southPanel, 1);
 		setSizeFull();

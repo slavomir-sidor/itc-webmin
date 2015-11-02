@@ -9,17 +9,26 @@ import org.apache.maven.settings.Server;
 import org.apache.maven.settings.Settings;
 
 import com.vaadin.data.util.BeanItemContainer;
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Component;
+import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 
-public class PluginRepositoriesView extends Table
+public class PluginRepositoriesView extends GridMasterVertical implements View
 {
 
-	BeanItemContainer<Repository> container;
+	public static final String VIEW_NAME = "Plugin Repositories";
 
-	public PluginRepositoriesView(List<Repository> repositories)
+	public PluginRepositoriesView(List<Repository> pluginGroups)
 	{
-		super("Plugin Repositories", new BeanItemContainer<Repository>(Repository.class, repositories));
+		super();
+		table.setContainerDataSource(new BeanItemContainer<Repository>(Repository.class, pluginGroups));
+	}
+
+	@Override
+	public void enter(ViewChangeEvent event)
+	{
 	}
 }
