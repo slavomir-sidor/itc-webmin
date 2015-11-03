@@ -33,8 +33,8 @@ public class GridMasterVertical extends VerticalLayout
 		addComponent(table);
 		addComponent(tabs);
 
-		setExpandRatio(table, 5);
-		setExpandRatio(tabs, 5);
+		setExpandRatio(table, 4);
+		setExpandRatio(tabs, 6);
 
 		table.setSelectable(true);
 		table.setSizeFull();

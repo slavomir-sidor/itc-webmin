@@ -26,7 +26,7 @@ public class MainScreen extends HorizontalLayout
 	{
 
 		setStyleName("main-screen");
-
+		setSizeFull();
 		CssLayout viewContainer = new CssLayout();
 		viewContainer.addStyleName("valo-content");
 		viewContainer.setSizeFull();
@@ -52,11 +52,10 @@ public class MainScreen extends HorizontalLayout
 		addComponent(menu);
 		addComponent(viewContainer);
 		addComponent(chatPanel);
-		addComponent(southPanel);
 
 		setExpandRatio(viewContainer, 8);
 		setExpandRatio(chatPanel, 1);
-		setExpandRatio(southPanel, 1);
+		
 		setSizeFull();
 
 	}

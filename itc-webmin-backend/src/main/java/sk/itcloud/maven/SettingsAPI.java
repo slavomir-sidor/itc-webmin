@@ -14,7 +14,7 @@ import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 public class SettingsAPI
 {
 
-	protected String fileName = "/usr/share/maven/conf/settings.xml";
+	protected String fileName = "~/.m2/settings.xml";
 
 	protected File file;
 

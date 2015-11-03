@@ -18,45 +18,17 @@ import com.vaadin.ui.Button.ClickEvent;
 
 import sk.itcloud.ErrorView;
 
-public class ProfileView extends VerticalLayout
+public class ProfileView extends HorizontalLayout
 {
 
-	protected Profile bean;
-
-	/**
-	 * @return the bean
-	 */
-	public Profile getBean()
-	{
-		return bean;
-	}
-
-	/**
-	 * @param bean
-	 *            the bean to set
-	 */
-	public void setBean(Profile bean)
-	{
-		this.bean = bean;
-	}
-
-	protected BeanFieldGroup<Profile> beanFieldGroup;
-
-	protected PropertiesView properties;
-
-	protected RepositoriesView repositories;
-
-	protected PluginRepositoriesView pluginRepositories;
-
-	public ProfileView(Profile bean)
+	public ProfileView(Profile profile)
 	{
 		setWidth("100%");
 		setHeight("100%");
 		setSizeFull();
-
-		setBean(bean);
 		setDescription("Profile");
 		setSizeFull();
+
 		CssLayout viewContainer = new CssLayout();
 		viewContainer.addStyleName("valo-content");
 		viewContainer.setSizeFull();
@@ -67,15 +39,17 @@ public class ProfileView extends VerticalLayout
 
 		SettingsMenu menu = new SettingsMenu(navigator);
 
-		menu.addView(new PropertiesView(bean.getProperties()), PropertiesView.VIEW_NAME, PropertiesView.VIEW_NAME);
-		menu.addView(new PluginRepositoriesView(bean.getPluginRepositories()), PluginRepositoriesView.VIEW_NAME,
-				PluginRepositoriesView.VIEW_NAME);
-		menu.addView(new RepositoriesView(bean.getRepositories()), RepositoriesView.VIEW_NAME,
-				RepositoriesView.VIEW_NAME);
+		menu.addView(new ProfileMainView(profile), ProfileMainView.VIEW_NAME, ProfileMainView.VIEW_NAME);
+		menu.addView(new ActivationView(profile.getActivation()), ActivationView.VIEW_NAME, ActivationView.VIEW_NAME);
+		menu.addView(new PropertiesView(profile.getProperties()), PropertiesView.VIEW_NAME, PropertiesView.VIEW_NAME);
+		menu.addView(new PluginRepositoriesView(profile.getPluginRepositories()), PluginRepositoriesView.VIEW_NAME, PluginRepositoriesView.VIEW_NAME);
+		menu.addView(new RepositoriesView(profile.getRepositories()), RepositoriesView.VIEW_NAME, RepositoriesView.VIEW_NAME);
 
 		addComponent(menu);
 		addComponent(viewContainer);
-		setExpandRatio(viewContainer, 9);
+
+		setExpandRatio(viewContainer, 8);
+		setExpandRatio(viewContainer, 2);
 	}
 
 	ViewChangeListener viewChangeListener = new ViewChangeListener()
