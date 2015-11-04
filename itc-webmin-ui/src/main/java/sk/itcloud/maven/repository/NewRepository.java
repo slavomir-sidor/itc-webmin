@@ -1,4 +1,4 @@
-package sk.itcloud.repository;
+package sk.itcloud.maven.repository;
 
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Grid;

@@ -22,9 +22,10 @@ import eu.livotov.labs.vaadin.autoforms.AutoForm;
 
 public class GridMasterVertical extends VerticalLayout
 {
-
 	protected Table table = new Table();
 	protected TabSheet tabs = new TabSheet();
+	protected FormLayout forms = new FormLayout();
+	protected FieldGroup binder = new FieldGroup();
 
 	public GridMasterVertical()
 	{
@@ -46,9 +47,6 @@ public class GridMasterVertical extends VerticalLayout
 				onRowClick(itemClickEvent);
 			}
 		});
-
-		FormLayout forms = new FormLayout();
-		FieldGroup binder = new FieldGroup();
 
 		tabs.addTab(forms, "New");
 	}

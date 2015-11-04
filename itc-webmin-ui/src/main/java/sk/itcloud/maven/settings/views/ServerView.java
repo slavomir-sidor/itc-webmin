@@ -6,13 +6,11 @@ import org.apache.maven.settings.Server;
 
 import com.vaadin.ui.FormLayout;
 
-
 public class ServerView extends FormLayout
 {
 
 	public ServerView(Server item)
 	{
 		super();
-		
 	}
 }

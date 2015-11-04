@@ -25,6 +25,10 @@ public class SettingsAPI
 	 */
 	public File getFile()
 	{
+		if (this.file == null)
+		{
+			new File(getFileName());
+		}
 		return file;
 	}
 
@@ -42,6 +46,10 @@ public class SettingsAPI
 	 */
 	public DefaultMavenSettingsBuilder getBuilder()
 	{
+		if (this.builder == null)
+		{
+			setBuilder(new DefaultMavenSettingsBuilder());
+		}
 		return builder;
 	}
 
@@ -59,6 +67,17 @@ public class SettingsAPI
 	 */
 	public Settings getSettings()
 	{
+		if (this.settings == null)
+		{
+			try
+			{
+				setSettings(getBuilder().buildSettings(getFile()));
+			} catch (IOException | XmlPullParserException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		return settings;
 	}
 
@@ -93,18 +112,11 @@ public class SettingsAPI
 	public SettingsAPI(String filename)
 	{
 		super();
-
 		setFileName(filename);
-		setFile(new File(getFileName()));
-		setBuilder(new DefaultMavenSettingsBuilder());
+	}
 
-		try
-		{
-			setSettings(getBuilder().buildSettings(getFile()));
-		} catch (IOException | XmlPullParserException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public SettingsAPI()
+	{
+		super();
 	}
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.maven.settings.Mirror;
 import org.apache.maven.settings.Profile;
 
+import com.vaadin.data.util.BeanItem;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -15,6 +16,8 @@ public class MirrorsView extends GridMasterVertical implements View
 {
 
 	public static final String VIEW_NAME = "Mirrors";
+	
+	BeanItem<Mirror> item;
 
 	public MirrorsView(List<Mirror> beans)
 	{

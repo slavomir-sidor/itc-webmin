@@ -12,14 +12,13 @@ import sk.itcloud.communication.ChatPanel;
 import sk.itcloud.dashboard.DashboardView;
 import sk.itcloud.maven.settings.views.SettingsView;
 import sk.itcloud.processes.ProcessesView;
-import sk.itcloud.project.ProjectView;
-import sk.itcloud.reports.ReportsView;
-import sk.itcloud.repository.RepositoryView;
+import sk.itcloud.maven.project.ProjectView;
+import sk.itcloud.maven.reports.ReportsView;
+import sk.itcloud.maven.repository.RepositoryView;
 import sk.itcloud.tasks.TasksView;
 
 public class MainScreen extends HorizontalLayout
 {
-
 	private Menu menu;
 
 	public MainScreen(ITCWebminUI ui)
@@ -27,6 +26,7 @@ public class MainScreen extends HorizontalLayout
 
 		setStyleName("main-screen");
 		setSizeFull();
+
 		CssLayout viewContainer = new CssLayout();
 		viewContainer.addStyleName("valo-content");
 		viewContainer.setSizeFull();
@@ -47,16 +47,13 @@ public class MainScreen extends HorizontalLayout
 
 		ChatPanel chatPanel = new ChatPanel();
 
-		HorizontalLayout southPanel = new HorizontalLayout();
-
 		addComponent(menu);
 		addComponent(viewContainer);
 		addComponent(chatPanel);
 
+		setExpandRatio(menu, 1);
 		setExpandRatio(viewContainer, 8);
 		setExpandRatio(chatPanel, 1);
-		
-		setSizeFull();
 
 	}
 

@@ -1,4 +1,4 @@
-package sk.itcloud.reports;
+package sk.itcloud.maven.reports;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;

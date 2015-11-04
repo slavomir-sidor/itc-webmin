@@ -7,7 +7,9 @@ package sk.itcloud.maven.settings.forms;
 
 import java.io.Serializable;
 
-public class Profile implements Serializable
+import com.vaadin.ui.FormLayout;
+
+public class Profile extends FormLayout
 {
 
 	/**

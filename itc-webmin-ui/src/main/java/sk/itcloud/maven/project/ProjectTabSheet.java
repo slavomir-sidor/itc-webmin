@@ -1,7 +1,4 @@
-/**
- * 
- */
-package sk.itcloud.project;
+package sk.itcloud.maven.project;
 
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
@@ -10,14 +7,16 @@ import com.vaadin.ui.TabSheet;
  * @author jahman
  *
  */
-public class ProjectTabSheet extends TabSheet {
+public class ProjectTabSheet extends TabSheet
+{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1187104482453020034L;
 
-	public ProjectTabSheet() {
+	public ProjectTabSheet()
+	{
 
 		super();
 		setSizeFull();

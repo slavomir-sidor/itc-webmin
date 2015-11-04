@@ -1,10 +1,9 @@
-/**
- * 
- */
-package sk.itcloud.repository;
+package sk.itcloud.maven.repository;
 
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
+
+import sk.itcloud.maven.SettingsAPI;
 
 /**
  * @author jahman
@@ -26,8 +25,9 @@ public class RepositoryTabSheet extends TabSheet
 		setWidth("100%");
 		setHeight("100%");
 
+		SettingsAPI settingsAPI = new SettingsAPI();
 		addTab(new RepositoryTable()).setCaption("Repositories");
-		addTab(new NewRepository()).setCaption("New");
+
 	}
 
 }

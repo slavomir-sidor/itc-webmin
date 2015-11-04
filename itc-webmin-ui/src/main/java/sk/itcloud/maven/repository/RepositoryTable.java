@@ -1,4 +1,4 @@
-package sk.itcloud.repository;
+package sk.itcloud.maven.repository;
 
 import com.vaadin.data.Container;
 import com.vaadin.ui.Component;
