@@ -1,12 +1,7 @@
 package sk.itcloud.maven;
 
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-
-import org.apache.maven.model.Model;
-import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
-import org.apache.maven.project.MavenProject;
 import org.apache.maven.settings.DefaultMavenSettingsBuilder;
 import org.apache.maven.settings.Settings;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;

@@ -28,6 +28,7 @@
 		<hibernate-jpa.version>1.0.0.Final</hibernate-jpa.version>
 		<axis2.version>1.7.0-SNAPSHOT</axis2.version>
 		<maven.version>2.2.1</maven.version>
+		<maven-aether-provider.version>3.1.0</maven-aether-provider.version>
 		<maven-model-builder.version>3.0.4</maven-model-builder.version>
 		<apache.httpcore.version>4.3.3</apache.httpcore.version>
 		<apache.httpclient.version>4.5.1</apache.httpclient.version>

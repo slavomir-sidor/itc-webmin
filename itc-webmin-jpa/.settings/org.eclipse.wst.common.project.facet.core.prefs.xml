@@ -4,4 +4,9 @@
       <attribute name="provider-id" value="com.google.appengine.eclipse.wtp.jpa.GaeLibraryProvider"/>
     </node>
   </facet>
+  <facet id="jpt.jaxb">
+    <node name="classgen">
+      <attribute name="package" value="sk.itcloud.maven.settings"/>
+    </node>
+  </facet>
 </root>

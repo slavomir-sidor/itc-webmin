@@ -5,6 +5,7 @@ import java.io.FileReader;
 
 import org.apache.maven.model.Model;
 import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
+import org.apache.maven.project.DefaultMavenProjectBuilder;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.settings.DefaultMavenSettingsBuilder;
 
@@ -29,10 +30,12 @@ public class MavenAPI
 
 	protected DefaultMavenSettingsBuilder settingsBuilder;
 
+	protected DefaultMavenProjectBuilder defaultMavenProjectBuilder;
+
 	/**
 	 * @return the globalSettingsFileName
 	 */
-	protected String getGlobalSettingsFileName()
+	public String getGlobalSettingsFileName()
 	{
 		return globalSettingsFileName;
 	}
@@ -41,7 +44,7 @@ public class MavenAPI
 	 * @param globalSettingsFileName
 	 *            the globalSettingsFileName to set
 	 */
-	protected void setGlobalSettingsFileName(String globalSettingsFileName)
+	public void setGlobalSettingsFileName(String globalSettingsFileName)
 	{
 		this.globalSettingsFileName = globalSettingsFileName;
 	}
@@ -49,7 +52,7 @@ public class MavenAPI
 	/**
 	 * @return the userSettingsFileName
 	 */
-	protected String getUserSettingsFileName()
+	public String getUserSettingsFileName()
 	{
 		return userSettingsFileName;
 	}
@@ -58,7 +61,7 @@ public class MavenAPI
 	 * @param userSettingsFileName
 	 *            the userSettingsFileName to set
 	 */
-	protected void setUserSettingsFileName(String userSettingsFileName)
+	public void setUserSettingsFileName(String userSettingsFileName)
 	{
 		this.userSettingsFileName = userSettingsFileName;
 	}
@@ -66,7 +69,7 @@ public class MavenAPI
 	/**
 	 * @return the userSettingsFile
 	 */
-	protected File getUserSettingsFile()
+	public File getUserSettingsFile()
 	{
 		return userSettingsFile;
 	}
@@ -75,7 +78,7 @@ public class MavenAPI
 	 * @param userSettingsFile
 	 *            the userSettingsFile to set
 	 */
-	protected void setUserSettingsFile(File userSettingsFile)
+	public void setUserSettingsFile(File userSettingsFile)
 	{
 		this.userSettingsFile = userSettingsFile;
 	}
@@ -83,7 +86,7 @@ public class MavenAPI
 	/**
 	 * @return the settingsBuilder
 	 */
-	protected DefaultMavenSettingsBuilder getSettingsBuilder()
+	public DefaultMavenSettingsBuilder getSettingsBuilder()
 	{
 		return settingsBuilder;
 	}
@@ -92,7 +95,7 @@ public class MavenAPI
 	 * @param settingsBuilder
 	 *            the settingsBuilder to set
 	 */
-	protected void setSettingsBuilder(DefaultMavenSettingsBuilder settingsBuilder)
+	public void setSettingsBuilder(DefaultMavenSettingsBuilder settingsBuilder)
 	{
 		this.settingsBuilder = settingsBuilder;
 	}
@@ -100,7 +103,7 @@ public class MavenAPI
 	/**
 	 * @return the reader
 	 */
-	protected FileReader getReader()
+	public FileReader getReader()
 	{
 		return reader;
 	}
@@ -109,7 +112,7 @@ public class MavenAPI
 	 * @param reader
 	 *            the reader to set
 	 */
-	protected void setReader(FileReader reader)
+	public void setReader(FileReader reader)
 	{
 		this.reader = reader;
 	}
@@ -117,7 +120,7 @@ public class MavenAPI
 	/**
 	 * @return the mavenreader
 	 */
-	protected MavenXpp3Reader getMavenreader()
+	public MavenXpp3Reader getMavenreader()
 	{
 		return mavenreader;
 	}
@@ -126,7 +129,7 @@ public class MavenAPI
 	 * @param mavenreader
 	 *            the mavenreader to set
 	 */
-	protected void setMavenreader(MavenXpp3Reader mavenreader)
+	public void setMavenreader(MavenXpp3Reader mavenreader)
 	{
 		this.mavenreader = mavenreader;
 	}
@@ -134,7 +137,7 @@ public class MavenAPI
 	/**
 	 * @return the model
 	 */
-	protected Model getModel()
+	public Model getModel()
 	{
 
 		return model;
@@ -144,7 +147,7 @@ public class MavenAPI
 	 * @param model
 	 *            the model to set
 	 */
-	protected void setModel(Model model)
+	public void setModel(Model model)
 	{
 		this.model = model;
 	}
@@ -152,7 +155,7 @@ public class MavenAPI
 	/**
 	 * @return the project
 	 */
-	protected MavenProject getProject()
+	public MavenProject getProject()
 	{
 		return project;
 	}
@@ -161,7 +164,7 @@ public class MavenAPI
 	 * @param project
 	 *            the project to set
 	 */
-	protected void setProject(MavenProject project)
+	public void setProject(MavenProject project)
 	{
 		this.project = project;
 	}
@@ -169,7 +172,7 @@ public class MavenAPI
 	/**
 	 * @return the pomfile
 	 */
-	protected String getPomfile()
+	public String getPomfile()
 	{
 		return pomfile;
 	}
@@ -178,8 +181,29 @@ public class MavenAPI
 	 * @param pomfile
 	 *            the pomfile to set
 	 */
-	protected void setPomfile(String pomfile)
+	public void setPomfile(String pomfile)
 	{
 		this.pomfile = pomfile;
+	}
+
+	/**
+	 * @return the defaultMavenProjectBuilder
+	 */
+	public DefaultMavenProjectBuilder getDefaultMavenProjectBuilder()
+	{
+		if (defaultMavenProjectBuilder == null)
+		{
+			setDefaultMavenProjectBuilder( new DefaultMavenProjectBuilder());
+		}
+		return defaultMavenProjectBuilder;
+	}
+
+	/**
+	 * @param defaultProjectBuilder
+	 *            the defaultProjectBuilder to set
+	 */
+	public void setDefaultMavenProjectBuilder(DefaultMavenProjectBuilder defaultMavenProjectBuilder)
+	{
+		this.defaultMavenProjectBuilder = defaultMavenProjectBuilder;
 	}
 }

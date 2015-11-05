@@ -1,5 +1,6 @@
 package sk.itcloud.maven.repository;
 
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
 
@@ -27,7 +28,7 @@ public class RepositoryTabSheet extends TabSheet
 
 		SettingsAPI settingsAPI = new SettingsAPI();
 		addTab(new RepositoryTable()).setCaption("Repositories");
-
+		addTab(new LocalRepositoryView()).setCaption("Local Repository");
 	}
 
 }

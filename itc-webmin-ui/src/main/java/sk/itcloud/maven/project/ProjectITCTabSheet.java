@@ -17,8 +17,8 @@ public class ProjectITCTabSheet extends TabSheet
 
 	public ProjectITCTabSheet()
 	{
-
 		super();
+
 		setSizeFull();
 		setWidth("100%");
 		setHeight("100%");
@@ -29,5 +29,4 @@ public class ProjectITCTabSheet extends TabSheet
 		addTab(new Label("Overview")).setCaption("Processes");
 		addTab(new Label("Overview")).setCaption("Reports");
 	}
-
 }

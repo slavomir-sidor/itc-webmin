@@ -5,11 +5,8 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.declarative.Design;
-
 import sk.itcloud.maven.MavenAPI;
 import sk.itcloud.maven.SettingsAPI;
-import sk.itcloud.project.ProjectITCTabSheet;
-import sk.itcloud.project.ProjectTabSheet;
 
 public class RepositoryView extends VerticalLayout implements View
 {

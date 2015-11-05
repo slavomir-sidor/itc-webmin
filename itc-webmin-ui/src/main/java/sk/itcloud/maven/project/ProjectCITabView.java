@@ -19,7 +19,6 @@ public class ProjectCITabView extends TabSheet
 		super();
 
 		setSizeFull();
-
 		setWidth("100%");
 		setHeight("100%");
 	}

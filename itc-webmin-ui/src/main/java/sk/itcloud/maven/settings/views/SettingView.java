@@ -28,13 +28,13 @@ public class SettingView extends TabSheet
 
 		api = new SettingsAPI(fileName);
 		Settings settings = api.getSettings();
-		List<Profile> items = settings.getProfiles();
+		List<Profile> profiles = settings.getProfiles();
 
 		addTab(new GeneralView(settings),"Settings");
 
-		for (int i = 0; i < items.size(); i++)
+		for (int i = 0; i < profiles.size(); i++)
 		{
-			addTab(new ProfileView(items.get(i)), items.get(i).getId());
+			addTab(new ProfileView(profiles.get(i)), profiles.get(i).getId());
 		}
 	}
 }
