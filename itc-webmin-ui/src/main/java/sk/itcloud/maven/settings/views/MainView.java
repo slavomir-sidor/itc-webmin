@@ -29,11 +29,9 @@ public class MainView extends GridLayout implements View
 	{
 		super(2, 2);
 
-		RuntimeInfo runtimeInfo = settings.getRuntimeInfo();
-
 		PropertysetItem item = new PropertysetItem();
-		//item.addItemProperty("file", new ObjectProperty<String>(runtimeInfo.getFile().getAbsolutePath().toString()));
-		//item.addItemProperty("localRepositorySourceLevel", new ObjectProperty<String>(runtimeInfo.getLocalRepositorySourceLevel()));
+		// item.addItemProperty("file", new ObjectProperty<String>(runtimeInfo.getFile().getAbsolutePath().toString()));
+		// item.addItemProperty("localRepositorySourceLevel", new ObjectProperty<String>(runtimeInfo.getLocalRepositorySourceLevel()));
 
 		FormLayout form = new FormLayout();
 		FieldGroup binder = new FieldGroup(item);
@@ -44,7 +42,6 @@ public class MainView extends GridLayout implements View
 		select.setRows(select.size());
 		select.setContainerDataSource(profiles);
 		select.setSizeFull();
-		
 
 		addComponent(form, 0, 0);
 		addComponent(select, 1, 0);
