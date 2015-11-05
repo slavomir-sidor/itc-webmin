@@ -3,21 +3,23 @@ package sk.itcloud.maven.model.form;
 import java.io.Serializable;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
+import eu.livotov.labs.vaadin.autoforms.api.FormFieldType;
 
-@FormBean(rows = 4, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "SCM")
+
+@FormBean(rows = 4, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Information")
 public class Info implements Serializable
 {
 
-	@FormField(title = "Name", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter connection")
+	@FormField(title = "Name", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String name;
 
-	@FormField(title = "Description", location = "1,1", required = true, requiredFieldErrorMessage = "Please enter connection")
+	@FormField(title = "Description", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter connection",type=FormFieldType.Text)
 	protected String description;
 
-	@FormField(title = "Url", location = "1,2", required = true, requiredFieldErrorMessage = "Please enter connection")
+	@FormField(title = "Url", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String url;
 
-	@FormField(title = "Inception Year", location = "1,3", required = true, requiredFieldErrorMessage = "Please enter connection")
+	@FormField(title = "Inception Year",width="100", location = "0,3", required = true, requiredFieldErrorMessage = "Please enter connection", type=FormFieldType.Integer)
 	protected String inceptionYear;
 
 	/**

@@ -50,11 +50,12 @@ public class ProjectDetailView extends TabSheet
 			{
 
 				Model model = mavenreader.read(reader);
-				addTab(new ProjectDetailOverviewView(model)).setCaption("Overview");
-				addTab(new Label("Overview")).setCaption("CI");
-				addTab(new Label("Overview")).setCaption("Issue Management");
-				addTab(new Label("Overview")).setCaption("Source Repository");
-				addTab(new Label("Overview")).setCaption("Artifacts");
+				addTab(new ArchetypeView()).setCaption("Archetype");
+				addTab(new ProjectDetailOverviewView(model)).setCaption("Artifact");
+				addTab(new Label("Overview")).setCaption("Processes");
+				addTab(new Label("Overview")).setCaption("Tasks");
+				addTab(new Label("Overview")).setCaption("Documents");
+				addTab(new Label("Overview")).setCaption("Repositories");
 				addTab(new Label("Overview")).setCaption("Reports");
 
 			} catch (IOException | XmlPullParserException e)

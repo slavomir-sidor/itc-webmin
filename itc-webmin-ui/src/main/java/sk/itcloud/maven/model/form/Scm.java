@@ -11,19 +11,19 @@ import java.io.Serializable;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 4, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "SCM")
+@FormBean(rows = 4, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Source Control Management")
 public class Scm implements Serializable
 {
-	@FormField(title = "Connection", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter connection")
+	@FormField(title = "Connection", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String connection;
 
-	@FormField(title = "Developer Connection", location = "1,1", required = true, requiredFieldErrorMessage = "Please enter developer connection")
+	@FormField(title = "Developer Connection", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter developer connection")
 	protected String developerConnection;
 
-	@FormField(title = "Tag", location = "1,2", required = true, requiredFieldErrorMessage = "Please enter tag")
+	@FormField(title = "Tag", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter tag")
 	protected String tag;
 
-	@FormField(title = "Url", location = "1,3", required = true, requiredFieldErrorMessage = "Please enter url")
+	@FormField(title = "Url", location = "0,3", required = true, requiredFieldErrorMessage = "Please enter url")
 	protected String url;
 
 	/**

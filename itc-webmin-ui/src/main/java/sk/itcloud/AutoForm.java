@@ -7,6 +7,18 @@ public class AutoForm extends eu.livotov.labs.vaadin.autoforms.AutoForm implemen
 {
 	public static final String VIEW_NAME = "";
 
+	public AutoForm()
+	{
+		super();
+		setSizeFull();
+	}
+
+	public AutoForm(Object arg0)
+	{
+		super(arg0);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void enter(ViewChangeEvent event)
 	{

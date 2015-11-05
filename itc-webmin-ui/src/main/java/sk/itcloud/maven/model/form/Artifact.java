@@ -4,19 +4,19 @@ import java.io.Serializable;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 4, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "")
-public class Artifact
+@FormBean(rows = 4, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Artifact")
+public class Artifact 
 {
-	@FormField(title = "Group Id", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter connection")
+	@FormField(title = "Group Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String groupId;
 
-	@FormField(title = "Artifact Id", location = "1,1", required = true, requiredFieldErrorMessage = "Please enter connection")
+	@FormField(title = "Artifact Id", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String artifactId;
 
-	@FormField(title = "Version", location = "1,2", required = true, requiredFieldErrorMessage = "Please enter connection")
+	@FormField(title = "Version", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String version;
 
-	@FormField(title = "Packaging", location = "1,3", required = true, requiredFieldErrorMessage = "Please enter connection")
+	@FormField(title = "Packaging", location = "0,3", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String packaging = "jar";
 
 	/**

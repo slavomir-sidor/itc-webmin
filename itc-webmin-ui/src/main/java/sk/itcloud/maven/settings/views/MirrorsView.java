@@ -12,6 +12,8 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
+import sk.itcloud.GridMasterVertical;
+
 public class MirrorsView extends GridMasterVertical implements View
 {
 

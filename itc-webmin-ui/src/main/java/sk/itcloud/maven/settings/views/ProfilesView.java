@@ -12,6 +12,8 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 
+import sk.itcloud.GridMasterVertical;
+
 public class ProfilesView extends GridMasterVertical implements View
 {
 

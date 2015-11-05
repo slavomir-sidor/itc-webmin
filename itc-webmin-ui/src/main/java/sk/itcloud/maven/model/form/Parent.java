@@ -11,20 +11,20 @@ import java.io.Serializable;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 4, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Issue Management")
+@FormBean(rows = 4, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Parent")
 public class Parent implements Serializable
 {
 
-	@FormField(title = "Group Id", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter Issue Management system")
+	@FormField(title = "Group Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter Issue Management system")
 	protected String groupId;
 
-	@FormField(title = "Artifact Id", location = "1,1", required = true, requiredFieldErrorMessage = "Please enter Issue Management system")
+	@FormField(title = "Artifact Id", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter Issue Management system")
 	protected String artifactId;
 
-	@FormField(title = "Version", location = "1,2", required = true, requiredFieldErrorMessage = "Please enter Issue Management system")
+	@FormField(title = "Version", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter Issue Management system")
 	protected String version;
 
-	@FormField(title = "Relative Path", location = "1,3", required = true, requiredFieldErrorMessage = "Please enter Issue Management system")
+	@FormField(title = "Relative Path", location = "0,3", required = true, requiredFieldErrorMessage = "Please enter Issue Management system")
 	protected String relativePath = "../pom.xml";
 
 	/**

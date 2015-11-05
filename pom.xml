@@ -138,4 +138,15 @@
 		<module>itc-webmin-jpa</module>
 	</modules>
 
+	<developers>
+		<developer>
+			<id>slavomir.kuzma</id>
+			<email>slavomir.kuzma@gmail.com</email>
+			<name>Slavomir Kuzma</name>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
 </project>

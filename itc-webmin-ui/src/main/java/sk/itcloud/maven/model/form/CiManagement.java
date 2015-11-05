@@ -14,14 +14,14 @@ import java.util.List;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 4, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Countinuos Integration")
+@FormBean(rows = 1, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Countinuos Integration")
 public class CiManagement implements Serializable
 {
 
-	@FormField(title = "System", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter CI System")
+	@FormField(title = "System", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter CI System")
 	protected String system;
 
-	@FormField(title = "Url", location = "1,1", required = true, requiredFieldErrorMessage = "Please enter CI Url")
+	@FormField(title = "Url", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter CI Url")
 	protected String url;
 
 	protected CiManagement.Notifiers notifiers;

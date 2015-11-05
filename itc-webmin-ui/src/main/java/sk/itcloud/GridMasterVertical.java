@@ -1,4 +1,4 @@
-package sk.itcloud.maven.settings.views;
+package sk.itcloud;
 
 import java.util.List;
 
@@ -20,8 +20,11 @@ import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
 
-public class GridMasterVertical extends VerticalLayout
+public class GridMasterVertical extends VerticalLayout implements View
 {
+
+	public static final String VIEW_NAME = "Properties";
+
 	protected Table table = new Table();
 	protected TabSheet tabs = new TabSheet();
 	protected FormLayout forms = new FormLayout();
@@ -66,5 +69,82 @@ public class GridMasterVertical extends VerticalLayout
 			tab.setClosable(true);
 		}
 		tabs.setSelectedTab(tab);
+	}
+
+	@Override
+	public void enter(ViewChangeEvent event)
+	{
+	}
+
+	/**
+	 * @return the table
+	 */
+	public Table getTable()
+	{
+		return table;
+	}
+
+	/**
+	 * @param table the table to set
+	 */
+	public void setTable(Table table)
+	{
+		this.table = table;
+	}
+
+	/**
+	 * @return the tabs
+	 */
+	public TabSheet getTabs()
+	{
+		return tabs;
+	}
+
+	/**
+	 * @param tabs the tabs to set
+	 */
+	public void setTabs(TabSheet tabs)
+	{
+		this.tabs = tabs;
+	}
+
+	/**
+	 * @return the forms
+	 */
+	public FormLayout getForms()
+	{
+		return forms;
+	}
+
+	/**
+	 * @param forms the forms to set
+	 */
+	public void setForms(FormLayout forms)
+	{
+		this.forms = forms;
+	}
+
+	/**
+	 * @return the binder
+	 */
+	public FieldGroup getBinder()
+	{
+		return binder;
+	}
+
+	/**
+	 * @param binder the binder to set
+	 */
+	public void setBinder(FieldGroup binder)
+	{
+		this.binder = binder;
+	}
+
+	/**
+	 * @return the viewName
+	 */
+	public static String getViewName()
+	{
+		return VIEW_NAME;
 	}
 }

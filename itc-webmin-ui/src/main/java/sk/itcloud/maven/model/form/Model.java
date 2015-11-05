@@ -3,18 +3,41 @@ package sk.itcloud.maven.model.form;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Model
+import java.io.Serializable;
+import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
+import eu.livotov.labs.vaadin.autoforms.ann.FormField;
+import eu.livotov.labs.vaadin.autoforms.api.FormFieldType;
+
+@FormBean(rows = 4, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Artifact")
+public class Model implements Serializable
 {
 
-	protected String modelVersion;
+	protected String modelVersion = "4.0";
+
 	protected Parent parent;
+
+	@FormField(title = "Group Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String groupId;
+
+	@FormField(title = "Artifact Id", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String artifactId;
+
+	@FormField(title = "Version", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String version;
+
+	@FormField(title = "Packaging", location = "0,3", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String packaging = "jar";
+
+	@FormField(title = "Name", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String name;
+
+	@FormField(title = "Description", location = "1,1", required = true, requiredFieldErrorMessage = "Please enter connection", type = FormFieldType.Text)
 	protected String description;
+
+	@FormField(title = "Url", location = "1,2", required = true, requiredFieldErrorMessage = "Please enter connection")
 	protected String url;
+
+	@FormField(title = "Inception Year", location = "1,3", required = true, requiredFieldErrorMessage = "Please enter connection", type = FormFieldType.Integer)
 	protected String inceptionYear;
 
 	protected Organization organization;

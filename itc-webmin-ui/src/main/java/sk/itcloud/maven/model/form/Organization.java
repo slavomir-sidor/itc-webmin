@@ -11,14 +11,14 @@ import java.io.Serializable;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 2, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Organization")
+@FormBean(rows = 2, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Organization")
 public class Organization implements Serializable
 {
 
-	@FormField(title = "Name", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter organization name")
+	@FormField(title = "Name", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter organization name")
 	protected String name;
 
-	@FormField(title = "Url", location = "1,1", required = true, requiredFieldErrorMessage = "Please enter organization url")
+	@FormField(title = "Url", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter organization url")
 	protected String url;
 
 	/**

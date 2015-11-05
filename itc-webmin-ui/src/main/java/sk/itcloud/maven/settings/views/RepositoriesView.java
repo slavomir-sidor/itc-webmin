@@ -7,6 +7,8 @@ import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 
+import sk.itcloud.GridMasterVertical;
+
 public class RepositoriesView extends GridMasterVertical implements View
 {
 

@@ -15,6 +15,8 @@ import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 
+import sk.itcloud.GridMasterVertical;
+
 public class PluginGroupsView extends GridMasterVertical implements View
 {
 
