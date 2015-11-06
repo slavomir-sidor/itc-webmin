@@ -25,8 +25,8 @@ public class HorizontalTabView extends HorizontalLayout implements View
 		addComponent(getMenu());
 		addComponent(getViewContainer());
 
-		setExpandRatio(getMenu(), 8);
-		setExpandRatio(getViewContainer(), 2);
+		setExpandRatio(getMenu(), 2);
+		setExpandRatio(getViewContainer(), 8);
 	}
 
 	public HorizontalTabView(Component... children)
@@ -67,6 +67,7 @@ public class HorizontalTabView extends HorizontalLayout implements View
 		if (this.menu == null)
 		{
 			this.menu = new Menu(getNavigator());
+			this.menu.setSizeFull();
 		}
 		return menu;
 	}
@@ -87,11 +88,12 @@ public class HorizontalTabView extends HorizontalLayout implements View
 	{
 		if (this.viewContainer == null)
 		{
-			this.viewContainer = new CssLayout();
-			this.viewContainer.addStyleName("valo-content");
-			this.viewContainer.setSizeFull();
+			viewContainer = new CssLayout();
+			viewContainer.addStyleName("valo-content");
+			viewContainer.setSizeFull();
+			setViewContainer(viewContainer);
 		}
-		return viewContainer;
+		return this.viewContainer;
 	}
 
 	/**

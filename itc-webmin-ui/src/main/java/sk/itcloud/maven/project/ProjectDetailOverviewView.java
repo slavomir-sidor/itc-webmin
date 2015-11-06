@@ -18,6 +18,7 @@ import sk.itcloud.AutoForm;
 import sk.itcloud.ErrorView;
 import sk.itcloud.GridLayoutView;
 import sk.itcloud.GridMasterVertical;
+import sk.itcloud.HorizontalTabView;
 import sk.itcloud.TableView;
 import sk.itcloud.maven.model.form.Artifact;
 import sk.itcloud.maven.model.form.CiManagement;
@@ -27,33 +28,12 @@ import sk.itcloud.maven.model.form.Organization;
 import sk.itcloud.maven.model.form.Parent;
 import sk.itcloud.maven.model.form.Scm;
 
-public class ProjectDetailOverviewView extends HorizontalLayout
+public class ProjectDetailOverviewView extends HorizontalTabView
 {
 
 	public ProjectDetailOverviewView(Model model)
 	{
 		super();
-		setSizeFull();
-
-		CssLayout viewContainer = new CssLayout();
-		viewContainer.addStyleName("valo-content");
-		viewContainer.setSizeFull();
-
-		final Navigator navigator = new Navigator(UI.getCurrent(), viewContainer);
-		navigator.setErrorView(ErrorView.class);
-		navigator.addViewChangeListener(viewChangeListener);
-
-		AutoForm modelView = new AutoForm();
-		modelView.setFormData(new sk.itcloud.maven.model.form.Model());
-
-		AutoForm artifactView = new AutoForm();
-		artifactView.setFormData(new Artifact());
-
-		AutoForm parentView = new AutoForm();
-		parentView.setFormData(new Parent());
-
-		AutoForm infoView = new AutoForm();
-		infoView.setFormData(new Info());
 
 		TableView propertiesView = new TableView();
 
@@ -61,40 +41,15 @@ public class ProjectDetailOverviewView extends HorizontalLayout
 		propertiesView.addContainerProperty("Value", String.class, null);
 		propertiesView.setSizeFull();
 
-		ProjectModuleView modulesView = new ProjectModuleView(model.getModules());
-		modulesView.setSizeFull();
-
 		AutoForm ciView = new AutoForm();
 		ciView.setFormData(new CiManagement());
 
-		DependencyView dependencyView = new DependencyView();
-		ProfilesView profilesView = new ProfilesView();
-		ProjectBuildView buildView = new ProjectBuildView();
-		ProjectLicencesView licencesView = new ProjectLicencesView();
-
-		GridLayoutView mainView = new GridLayoutView(2, 2);
-		mainView.addComponent(artifactView, 0, 0);
-		mainView.addComponent(infoView, 1, 0);
-		mainView.addComponent(parentView, 0, 1);
-		mainView.setSizeFull();
-		mainView.setMargin(true);
-		mainView.setSpacing(true);
-
-		Menu menu = new Menu(navigator);
-		menu.addView(mainView, "Artifact", "Artifact");
-		menu.addView(modulesView, "Modules", "Modules");
-		menu.addView(dependencyView, "Dependency", "Dependency");
-		menu.addView(propertiesView, "Properties", "Properties");
-		menu.addView(ciView, "Continuous Integration", "Continuous Integration");
-		menu.addView(licencesView, "Licences", "Licences");
-		menu.addView(profilesView, "Profiles", "Profiles");
-		menu.addView(buildView, "Build", "Build");
-
-		addComponent(menu);
-		addComponent(viewContainer);
-
-		setExpandRatio(viewContainer, 8);
-		setExpandRatio(viewContainer, 2);
+		getMenu().addView(new ProjectArtifactView(model), "Artifact", "Artifact");
+		getMenu().addView(new ProjectModuleView(model), "Modules", "Modules");
+		getMenu().addView(new ProjectDependencyView(model), "Dependency", "Dependency");
+		getMenu().addView(propertiesView, "Properties", "Properties");
+		getMenu().addView(ciView, "Continuous Integration", "Continuous Integration");
+		getMenu().addView(new ProjectProfilesView(model), "Profiles", "Profiles");
 	}
 
 	ViewChangeListener viewChangeListener = new ViewChangeListener()

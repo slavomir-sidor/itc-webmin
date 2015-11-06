@@ -15,23 +15,21 @@ import sk.itcloud.maven.model.form.Dependency;
 import sk.itcloud.maven.model.form.IssueManagement;
 import sk.itcloud.maven.model.form.Scm;
 
-public class IssueManagementView extends HorizontalTabView
+public class ProjectDocumentsView extends HorizontalTabView
 {
 
 	protected AutoForm scmView = new AutoForm();
 	protected AutoForm distributionManagementView;
 
-	public IssueManagementView(Model model)
+	public ProjectDocumentsView(Model model)
 	{
 		super();
-
-		AutoForm issueManagementView = new AutoForm();
-		issueManagementView.setFormData(new IssueManagement());
-
-		getMenu().addView(issueManagementView, "Issue Management", "Issue Management");
+		getMenu().addView(new ProjectReportsView(model), "Reports", "Reports");
+		getMenu().addView(new ProjectLicencesView(model), "Licences", "Licences");
+		
 	}
 
-	public IssueManagementView(Component... children)
+	public ProjectDocumentsView(Component... children)
 	{
 		super(children);
 		// TODO Auto-generated constructor stub

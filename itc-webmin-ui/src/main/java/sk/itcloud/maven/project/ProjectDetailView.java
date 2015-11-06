@@ -36,6 +36,7 @@ public class ProjectDetailView extends TabSheet
 		MavenAPI api = new MavenAPI();
 
 		File file = new File("/var/www/jahman/domains/itc-webmin.jahman/pom.xml");
+
 		DefaultModelBuilder modelBuilder = new DefaultModelBuilder();
 		ProjectBuilderConfiguration config = new DefaultProjectBuilderConfiguration();
 		DefaultMavenProjectBuilder builder = api.getDefaultMavenProjectBuilder();
@@ -51,15 +52,14 @@ public class ProjectDetailView extends TabSheet
 
 				Model model = mavenreader.read(reader);
 
-				addTab(new ArchetypeView()).setCaption("Archetype");
+				addTab(new ProjectArchetypeView()).setCaption("Archetype");
 				addTab(new ProjectDetailOverviewView(model)).setCaption("Artifact");
-				addTab(new RepositoriesView(model)).setCaption("Repositories");
+				addTab(new ProjectRepositoriesView(model)).setCaption("Repositories");
 				addTab(new ProjectBuildView(model)).setCaption("Build");
 				addTab(new ProjectTeamView(model)).setCaption("Team");
-				addTab(new Label("Overview")).setCaption("Processes");
-				addTab(new IssueManagementView(model)).setCaption("Tasks");
-				addTab(new Label("Overview")).setCaption("Reports");
-				addTab(new Label("Overview")).setCaption("Documents");
+				addTab(new ProjectProcessesView(model)).setCaption("Processes");
+				addTab(new ProjectIssueManagementView(model)).setCaption("Tasks");
+				addTab(new ProjectDocumentsView(model)).setCaption("Documents");
 
 			} catch (IOException | XmlPullParserException e)
 			{

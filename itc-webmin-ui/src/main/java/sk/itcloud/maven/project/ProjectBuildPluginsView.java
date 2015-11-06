@@ -1,31 +1,25 @@
 package sk.itcloud.maven.project;
 
+import org.apache.maven.model.Model;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalLayout;
-
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
+import sk.itcloud.GridMasterVertical;
+import sk.itcloud.maven.model.form.Build;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class MailingListView extends VerticalLayout implements View
+public class ProjectBuildPluginsView extends GridMasterVertical implements View
 {
+	public static final String VIEW_NAME = "Settings";
 
-	public static final String VIEW_NAME = "Repositories";
-
-	HorizontalSplitPanel panel;
-	AutoForm form;
-
-	public MailingListView()
+	public ProjectBuildPluginsView(Model model)
 	{
 		super();
-	}
-
-	public MailingListView(Component... children)
-	{
-		super(children);
-		// TODO Auto-generated constructor stub
+		getTable().setData(model.getBuild().getPlugins());
 	}
 
 	@Override

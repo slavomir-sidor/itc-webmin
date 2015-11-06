@@ -8,6 +8,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 
 import sk.itcloud.AutoForm;
+import sk.itcloud.GridLayoutView;
 import sk.itcloud.GridMasterVertical;
 import sk.itcloud.HorizontalTabView;
 import sk.itcloud.maven.model.form.Organization;
@@ -17,7 +18,9 @@ public class ProjectTeamView extends HorizontalTabView implements View
 
 	public static final String VIEW_NAME = "Build";
 
-	protected MailingListView mailingListView = new MailingListView();
+	protected GridLayoutView team;
+
+	protected ProjectMailingListView mailingListView = new ProjectMailingListView();
 
 	protected AutoForm organizationView = new AutoForm();
 
@@ -26,21 +29,17 @@ public class ProjectTeamView extends HorizontalTabView implements View
 	public ProjectTeamView(Model model)
 	{
 		super();
-		setSizeFull();
 
-		addComponent(getMenu());
-		addComponent(getViewContainer());
-
-		setExpandRatio(getMenu(), 8);
-		setExpandRatio(getViewContainer(), 2);
-
+		team = new GridLayoutView(2, 2);
 		organizationView.setFormData(new Organization());
 		developersView.setSizeFull();
 		developersView.getTable().setContainerDataSource(new BeanItemContainer<Developer>(Developer.class, model.getDevelopers()));
 
-		getMenu().addView(organizationView, "Organization", "Organization");
-		getMenu().addView(developersView, "Team", "Team");
-		getMenu().addView(mailingListView, "Mailing List", "Mailing List");
+		team.addComponent(organizationView, 0, 0);
+		team.addComponent(mailingListView, 0, 1);
+
+		getMenu().addView(team, "Teams & Organization", "Teams & Organization");
+		getMenu().addView(developersView, "Peoples", "Team");
 
 	}
 

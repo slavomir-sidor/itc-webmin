@@ -1,7 +1,12 @@
 package sk.itcloud.maven.project;
 
+import java.util.List;
+
 import org.apache.maven.model.Build;
+import org.apache.maven.model.Extension;
 import org.apache.maven.model.Model;
+import org.apache.maven.model.Plugin;
+import org.apache.maven.model.Resource;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -19,7 +24,16 @@ public class ProjectBuildView extends HorizontalTabView
 	public ProjectBuildView(Model model)
 	{
 		super();
-		Build build=model.getBuild();
+		Build build = model.getBuild();
+
+		List<Plugin> plugins = build.getPlugins();
+		List<Extension> extentions = build.getExtensions();
+		List<Resource> resources = build.getResources();
+
+		getMenu().addView(new ProjectBuildSettingsView(model), "Build", "Build");
+		getMenu().addView(new ProjectBuildPluginsView(model), "Plugins", "Plugins");
+		getMenu().addView(new ProjectBuildExtentionsView(model), "Extentions", "Extentions");
+
 	}
 
 	public ProjectBuildView(Component... children)

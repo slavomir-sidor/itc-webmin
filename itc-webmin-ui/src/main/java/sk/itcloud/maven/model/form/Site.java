@@ -9,11 +9,20 @@ package sk.itcloud.maven.model.form;
 
 import java.io.Serializable;
 
+import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
+import eu.livotov.labs.vaadin.autoforms.ann.FormField;
+
+@FormBean(rows = 4, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Site")
 public class Site implements Serializable
 {
 
+	@FormField(title = "Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String id;
+
+	@FormField(title = "Name", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String name;
+
+	@FormField(title = "Url", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String url;
 
 	/**

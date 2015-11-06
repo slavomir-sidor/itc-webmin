@@ -1,24 +1,16 @@
 package sk.itcloud;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.maven.settings.Server;
-import org.apache.maven.settings.Settings;
 import com.vaadin.event.ItemClickEvent;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.data.Item;
-import com.vaadin.data.fieldgroup.FieldGroup;
-import com.vaadin.data.util.BeanItemContainer;
-import com.vaadin.ui.Component;
 import com.vaadin.ui.FormLayout;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.TabSheet.Tab;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
-import eu.livotov.labs.vaadin.autoforms.AutoForm;
 
 public class GridMasterVertical extends VerticalLayout implements View
 {
@@ -27,8 +19,7 @@ public class GridMasterVertical extends VerticalLayout implements View
 
 	protected Table table = new Table();
 	protected TabSheet tabs = new TabSheet();
-	protected FormLayout forms = new FormLayout();
-	protected FieldGroup binder = new FieldGroup();
+	protected List<AutoForm> forms = new ArrayList<AutoForm>();
 
 	public GridMasterVertical()
 	{
@@ -51,7 +42,12 @@ public class GridMasterVertical extends VerticalLayout implements View
 			}
 		});
 
-		tabs.addTab(forms, "New");
+		AutoForm autoForm = new AutoForm();
+		forms.add(autoForm);
+		for (int i = 0; i < forms.size(); i++)
+		{
+			tabs.addTab(forms.get(i), "New");
+		}
 	}
 
 	private void onRowClick(ItemClickEvent itemClickEvent)
@@ -85,7 +81,8 @@ public class GridMasterVertical extends VerticalLayout implements View
 	}
 
 	/**
-	 * @param table the table to set
+	 * @param table
+	 *            the table to set
 	 */
 	public void setTable(Table table)
 	{
@@ -101,43 +98,12 @@ public class GridMasterVertical extends VerticalLayout implements View
 	}
 
 	/**
-	 * @param tabs the tabs to set
+	 * @param tabs
+	 *            the tabs to set
 	 */
 	public void setTabs(TabSheet tabs)
 	{
 		this.tabs = tabs;
-	}
-
-	/**
-	 * @return the forms
-	 */
-	public FormLayout getForms()
-	{
-		return forms;
-	}
-
-	/**
-	 * @param forms the forms to set
-	 */
-	public void setForms(FormLayout forms)
-	{
-		this.forms = forms;
-	}
-
-	/**
-	 * @return the binder
-	 */
-	public FieldGroup getBinder()
-	{
-		return binder;
-	}
-
-	/**
-	 * @param binder the binder to set
-	 */
-	public void setBinder(FieldGroup binder)
-	{
-		this.binder = binder;
 	}
 
 	/**
@@ -146,5 +112,21 @@ public class GridMasterVertical extends VerticalLayout implements View
 	public static String getViewName()
 	{
 		return VIEW_NAME;
+	}
+
+	/**
+	 * @return the forms
+	 */
+	public List<AutoForm> getForms()
+	{
+		return forms;
+	}
+
+	/**
+	 * @param forms the forms to set
+	 */
+	public void setForms(List<AutoForm> forms)
+	{
+		this.forms = forms;
 	}
 }

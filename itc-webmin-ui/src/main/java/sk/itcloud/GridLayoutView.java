@@ -25,6 +25,11 @@ public class GridLayoutView extends GridLayout implements View
 {
 
 	public static String VIEW_NAME = "";
+	
+	public GridLayoutView()
+	{
+		super();
+	}
 
 	public GridLayoutView(String viewName)
 	{

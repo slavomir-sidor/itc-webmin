@@ -1,36 +1,37 @@
 package sk.itcloud.maven.project;
 
 import java.util.List;
-
+import org.apache.maven.model.Model;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.GridLayout;
-import com.vaadin.ui.HorizontalSplitPanel;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
-import com.vaadin.ui.VerticalLayout;
 
-import eu.livotov.labs.vaadin.autoforms.AutoForm;
-import sk.itcloud.maven.model.form.Dependency;
-
-public class ProjectModuleView extends VerticalLayout implements View
+public class ProjectModuleView extends HorizontalLayout implements View
 {
 
 	public static final String VIEW_NAME = "Modules";
 
-	Table table;
-	GridLayout grid;
+	protected Table table;
+	protected GridLayout grid;
+	protected List<String> list;
 
-	public ProjectModuleView(List<String> list)
+	public ProjectModuleView(Model model)
 	{
 		super();
+
+		list = model.getModules();
 		setSizeFull();
 
 		table = new Table();
 		table.addContainerProperty("Module", String.class, null);
+		table.setSizeFull();
 		table.setData(list);
 
 		grid = new GridLayout();
+		grid.setSizeFull();
 
 		addComponent(table);
 		addComponent(grid);

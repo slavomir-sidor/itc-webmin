@@ -1,5 +1,7 @@
 package sk.itcloud.maven.project;
 
+import org.apache.maven.model.Model;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Component;
@@ -9,7 +11,7 @@ import com.vaadin.ui.VerticalLayout;
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class ProfilesView extends VerticalLayout implements View
+public class ProjectProfilesView extends VerticalLayout implements View
 {
 
 	public static final String VIEW_NAME = "Profiles";
@@ -17,12 +19,12 @@ public class ProfilesView extends VerticalLayout implements View
 	HorizontalSplitPanel panel;
 	AutoForm form;
 
-	public ProfilesView()
+	public ProjectProfilesView(Model model)
 	{
 		super();
 	}
 
-	public ProfilesView(Component... children)
+	public ProjectProfilesView(Component... children)
 	{
 		super(children);
 		// TODO Auto-generated constructor stub

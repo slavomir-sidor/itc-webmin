@@ -11,6 +11,10 @@ public class AutoForm extends eu.livotov.labs.vaadin.autoforms.AutoForm implemen
 	{
 		super();
 		setSizeFull();
+		setWidth("100%");
+		setHeight("100%");
+		setSpacing(true);
+		setMargin(true);
 	}
 
 	public AutoForm(Object arg0)
