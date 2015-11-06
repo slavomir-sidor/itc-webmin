@@ -18,10 +18,9 @@ import eu.livotov.labs.vaadin.autoforms.AutoForm;
 import sk.itcloud.HorizontalTabView;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class ProjectBuildView extends HorizontalTabView
+public class BuildView extends HorizontalTabView
 {
-
-	public ProjectBuildView(Model model)
+	public BuildView(Model model)
 	{
 		super();
 		Build build = model.getBuild();
@@ -30,13 +29,13 @@ public class ProjectBuildView extends HorizontalTabView
 		List<Extension> extentions = build.getExtensions();
 		List<Resource> resources = build.getResources();
 
-		getMenu().addView(new ProjectBuildSettingsView(model), "Build", "Build");
-		getMenu().addView(new ProjectBuildPluginsView(model), "Plugins", "Plugins");
-		getMenu().addView(new ProjectBuildExtentionsView(model), "Extentions", "Extentions");
-
+		getMenu().addView(new BuildSettingsView(model), "Build", "Build");
+		getMenu().addView(new BuildPluginsView(model), "Plugins", "Plugins");
+		getMenu().addView(new BuildExtentionsView(model), "Extentions", "Extentions");
+		getMenu().addView(new CiView(model), "Continuous Integration", "Continuous Integration");
 	}
 
-	public ProjectBuildView(Component... children)
+	public BuildView(Component... children)
 	{
 		super(children);
 		// TODO Auto-generated constructor stub

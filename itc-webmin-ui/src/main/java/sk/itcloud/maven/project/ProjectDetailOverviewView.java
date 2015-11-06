@@ -41,15 +41,11 @@ public class ProjectDetailOverviewView extends HorizontalTabView
 		propertiesView.addContainerProperty("Value", String.class, null);
 		propertiesView.setSizeFull();
 
-		AutoForm ciView = new AutoForm();
-		ciView.setFormData(new CiManagement());
-
-		getMenu().addView(new ProjectArtifactView(model), "Artifact", "Artifact");
-		getMenu().addView(new ProjectModuleView(model), "Modules", "Modules");
-		getMenu().addView(new ProjectDependencyView(model), "Dependency", "Dependency");
+		getMenu().addView(new ArtifactView(model), "Artifact", "Artifact");
+		getMenu().addView(new ModuleView(model), "Modules", "Modules");
+		getMenu().addView(new DependencyView(model), "Dependency", "Dependency");
 		getMenu().addView(propertiesView, "Properties", "Properties");
-		getMenu().addView(ciView, "Continuous Integration", "Continuous Integration");
-		getMenu().addView(new ProjectProfilesView(model), "Profiles", "Profiles");
+		getMenu().addView(new ProfilesView(model), "Profiles", "Profiles");
 	}
 
 	ViewChangeListener viewChangeListener = new ViewChangeListener()

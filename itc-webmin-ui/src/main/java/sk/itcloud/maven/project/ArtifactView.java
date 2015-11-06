@@ -17,10 +17,10 @@ import sk.itcloud.maven.model.form.Parent;
  * @author jahman
  *
  */
-public class ProjectArtifactView extends GridLayoutView
+public class ArtifactView extends GridLayoutView
 {
 
-	public ProjectArtifactView(Model model)
+	public ArtifactView(Model model)
 	{
 		super(2, 2);
 
@@ -40,13 +40,13 @@ public class ProjectArtifactView extends GridLayoutView
 		setSizeFull();
 	}
 
-	public ProjectArtifactView(int columns, int rows, Component... children)
+	public ArtifactView(int columns, int rows, Component... children)
 	{
 		super(columns, rows, children);
 		// TODO Auto-generated constructor stub
 	}
 
-	public ProjectArtifactView(int columns, int rows)
+	public ArtifactView(int columns, int rows)
 	{
 		super(columns, rows);
 		// TODO Auto-generated constructor stub

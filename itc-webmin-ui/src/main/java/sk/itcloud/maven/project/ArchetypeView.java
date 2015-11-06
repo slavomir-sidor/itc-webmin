@@ -12,13 +12,13 @@ import sk.itcloud.AutoForm;
  * @author jahman
  *
  */
-public class ProjectArchetypeView extends VerticalLayout
+public class ArchetypeView extends VerticalLayout
 {
 	protected AutoForm form;
 
 	protected GridLayout grid;
 
-	public ProjectArchetypeView()
+	public ArchetypeView()
 	{
 		super();
 

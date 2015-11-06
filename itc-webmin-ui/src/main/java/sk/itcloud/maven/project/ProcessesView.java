@@ -13,13 +13,13 @@ import sk.itcloud.AutoForm;
  * @author jahman
  *
  */
-public class ProjectProcessesView extends VerticalLayout
+public class ProcessesView extends VerticalLayout
 {
 	protected AutoForm form;
 
 	protected GridLayout grid;
 
-	public ProjectProcessesView(Model model)
+	public ProcessesView(Model model)
 	{
 		super();
 

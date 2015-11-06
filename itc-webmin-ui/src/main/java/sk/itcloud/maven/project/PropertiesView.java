@@ -5,21 +5,29 @@ import org.apache.maven.model.Model;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Component;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalLayout;
+
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
-import sk.itcloud.GridMasterVertical;
-import sk.itcloud.maven.model.form.Build;
+import sk.itcloud.maven.model.form.CiManagement;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class ProjectBuildPluginsView extends GridMasterVertical implements View
+public class PropertiesView extends VerticalLayout implements View
 {
-	public static final String VIEW_NAME = "Settings";
 
-	public ProjectBuildPluginsView(Model model)
+	public static final String VIEW_NAME = "Properties";
+
+	public PropertiesView(Model model)
 	{
 		super();
-		getTable().setData(model.getBuild().getPlugins());
+		setSizeFull();
+
+		HorizontalLayout table = new HorizontalLayout();
+
+		AutoForm ciView = new AutoForm();
+		ciView.setFormData(new CiManagement());
+
 	}
 
 	@Override

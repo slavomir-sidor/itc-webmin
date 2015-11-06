@@ -150,4 +150,17 @@
 		</developer>
 	</developers>
 
+	<mailingLists>
+		<mailingList>
+			<archive>archive</archive>
+			<name>name</name>
+			<otherArchives>
+				<otherArchive>otherArchive</otherArchive>
+			</otherArchives>
+			<post>post</post>
+			<subscribe>subscribe</subscribe>
+			<unsubscribe>unsubscribe</unsubscribe>
+		</mailingList>
+	</mailingLists>
+
 </project>

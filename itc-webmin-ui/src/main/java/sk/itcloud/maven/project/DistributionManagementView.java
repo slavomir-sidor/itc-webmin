@@ -15,7 +15,7 @@ import sk.itcloud.maven.model.form.Site;
  * @author jahman
  *
  */
-public class ProjectDistributionManagementView extends GridLayout implements View
+public class DistributionManagementView extends GridLayout implements View
 {
 
 	public static final String VIEW_NAME = "Distribution Management";
@@ -24,7 +24,7 @@ public class ProjectDistributionManagementView extends GridLayout implements Vie
 	protected AutoForm snapshotRepository;
 	protected AutoForm site;
 
-	public ProjectDistributionManagementView(Model model)
+	public DistributionManagementView(Model model)
 	{
 		super(2, 2);
 

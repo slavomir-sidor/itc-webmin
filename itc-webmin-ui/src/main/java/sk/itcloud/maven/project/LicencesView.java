@@ -11,17 +11,17 @@ import com.vaadin.ui.VerticalLayout;
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class ProjectLicencesView extends VerticalLayout implements View
+public class LicencesView extends VerticalLayout implements View
 {
 
 	public static final String VIEW_NAME = "Licences";
 
-	public ProjectLicencesView(Model model)
+	public LicencesView(Model model)
 	{
 		super();
 	}
 
-	public ProjectLicencesView(Component... children)
+	public LicencesView(Component... children)
 	{
 		super(children);
 		// TODO Auto-generated constructor stub

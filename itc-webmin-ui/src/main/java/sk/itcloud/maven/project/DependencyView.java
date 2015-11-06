@@ -8,6 +8,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
+import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Tree;
@@ -15,7 +16,7 @@ import com.vaadin.ui.VerticalLayout;
 import sk.itcloud.AutoForm;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class ProjectDependencyView extends VerticalLayout implements View
+public class DependencyView extends VerticalLayout implements View
 {
 
 	public static final String VIEW_NAME = "Dependency";
@@ -26,9 +27,9 @@ public class ProjectDependencyView extends VerticalLayout implements View
 	protected Tree dependency;
 	protected Tree dependencyManagement;
 
-	public ProjectDependencyView(Model model)
+	public DependencyView(Model model)
 	{
-		super();
+		setSizeFull();
 
 		BeanItemContainer<org.apache.maven.model.Dependency> dependencyContainer = new BeanItemContainer<org.apache.maven.model.Dependency>(
 				org.apache.maven.model.Dependency.class, model.getDependencies());
@@ -66,7 +67,7 @@ public class ProjectDependencyView extends VerticalLayout implements View
 		setExpandRatio(form, 4);
 	}
 
-	public ProjectDependencyView(Component... children)
+	public DependencyView(Component... children)
 	{
 		super(children);
 		// TODO Auto-generated constructor stub

@@ -11,12 +11,12 @@ import com.vaadin.ui.TabSheet;
  * @author jahman
  *
  */
-public class ProjectReportsView extends GridLayout implements View
+public class ReportsView extends GridLayout implements View
 {
 
 	public static final String VIEW_NAME = "Build";
 
-	public ProjectReportsView(Model model)
+	public ReportsView(Model model)
 	{
 		super();
 

@@ -9,26 +9,21 @@ import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalLayout;
 
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
+import sk.itcloud.GridMasterVertical;
+import sk.itcloud.HorizontalTabView;
 import sk.itcloud.maven.model.form.Build;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class ProjectBuildExtentionsView extends VerticalLayout implements View
+public class BuildExtentionsView extends GridMasterVertical implements View
 {
 
 	public static final String VIEW_NAME = "Settings";
 
-	public ProjectBuildExtentionsView(Model model)
+	public BuildExtentionsView(Model model)
 	{
 		super();
-		AutoForm form = new AutoForm();
-		form.setFormData(new Build());
-		addComponent(form);
-	}
-
-	public ProjectBuildExtentionsView(Component... children)
-	{
-		super(children);
-		// TODO Auto-generated constructor stub
+		getTable().setData(model.getBuild().getExtensions());
+		getForms().get(0).setFormData(new Build());
 	}
 
 	@Override

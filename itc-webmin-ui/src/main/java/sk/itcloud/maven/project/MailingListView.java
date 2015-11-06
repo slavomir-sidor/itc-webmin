@@ -9,25 +9,17 @@ import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalLayout;
 
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
+import sk.itcloud.GridMasterVertical;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class ProjectProfilesView extends VerticalLayout implements View
+public class MailingListView extends GridMasterVertical implements View
 {
+	public static final String VIEW_NAME = "Mailing List";
 
-	public static final String VIEW_NAME = "Profiles";
-
-	HorizontalSplitPanel panel;
-	AutoForm form;
-
-	public ProjectProfilesView(Model model)
+	public MailingListView(Model model)
 	{
 		super();
-	}
-
-	public ProjectProfilesView(Component... children)
-	{
-		super(children);
-		// TODO Auto-generated constructor stub
+		getTable().setData(model.getMailingLists());
 	}
 
 	@Override
@@ -36,5 +28,4 @@ public class ProjectProfilesView extends VerticalLayout implements View
 		// TODO Auto-generated method stub
 
 	}
-
 }

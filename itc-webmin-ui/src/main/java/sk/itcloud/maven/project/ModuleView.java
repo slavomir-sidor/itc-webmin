@@ -9,7 +9,7 @@ import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 
-public class ProjectModuleView extends HorizontalLayout implements View
+public class ModuleView extends HorizontalLayout implements View
 {
 
 	public static final String VIEW_NAME = "Modules";
@@ -18,7 +18,7 @@ public class ProjectModuleView extends HorizontalLayout implements View
 	protected GridLayout grid;
 	protected List<String> list;
 
-	public ProjectModuleView(Model model)
+	public ModuleView(Model model)
 	{
 		super();
 
@@ -40,7 +40,7 @@ public class ProjectModuleView extends HorizontalLayout implements View
 		setExpandRatio(grid, 2);
 	}
 
-	public ProjectModuleView(Component... children)
+	public ModuleView(Component... children)
 	{
 		super(children);
 		// TODO Auto-generated constructor stub
