@@ -64,40 +64,18 @@ public class ProjectDetailOverviewView extends HorizontalLayout
 		ProjectModuleView modulesView = new ProjectModuleView(model.getModules());
 		modulesView.setSizeFull();
 
-		GridMasterVertical developersView = new GridMasterVertical();
-		developersView.setSizeFull();
-		developersView.getTable().setContainerDataSource(new BeanItemContainer<Developer>(Developer.class, model.getDevelopers()));
-
-		AutoForm organizationView = new AutoForm();
-		organizationView.setFormData(new Organization());
-
-		AutoForm scmView = new AutoForm();
-		scmView.setFormData(new Scm());
-
-		GridLayoutView scmGridView = new GridLayoutView("");
-		scmGridView.addComponent(scmView);
-
-		AutoForm issueManagementView = new AutoForm();
-		issueManagementView.setFormData(new IssueManagement());
-
 		AutoForm ciView = new AutoForm();
 		ciView.setFormData(new CiManagement());
 
-		AutoForm distributionManagementView = new AutoForm();
-		// distributionManagementView.setFormData(new DistributionManagement());
-
 		DependencyView dependencyView = new DependencyView();
 		ProfilesView profilesView = new ProfilesView();
-		BuildView buildView = new BuildView();
-		LicencesView licencesView = new LicencesView();
-		RepositoriesView repositoriesView = new RepositoriesView();
-		MailingListView mailingListView = new MailingListView();
+		ProjectBuildView buildView = new ProjectBuildView();
+		ProjectLicencesView licencesView = new ProjectLicencesView();
 
 		GridLayoutView mainView = new GridLayoutView(2, 2);
 		mainView.addComponent(artifactView, 0, 0);
 		mainView.addComponent(infoView, 1, 0);
 		mainView.addComponent(parentView, 0, 1);
-		mainView.addComponent(organizationView);
 		mainView.setSizeFull();
 		mainView.setMargin(true);
 		mainView.setSpacing(true);
@@ -106,18 +84,11 @@ public class ProjectDetailOverviewView extends HorizontalLayout
 		menu.addView(mainView, "Artifact", "Artifact");
 		menu.addView(modulesView, "Modules", "Modules");
 		menu.addView(dependencyView, "Dependency", "Dependency");
-		menu.addView(developersView, "Team", "Team");
 		menu.addView(propertiesView, "Properties", "Properties");
-		
-		menu.addView(scmGridView, "Source Control Management", "Source Control");
-		menu.addView(issueManagementView, "Issue Management", "Issue Management");
-		menu.addView(distributionManagementView, "Distribution", "Distribution");
 		menu.addView(ciView, "Continuous Integration", "Continuous Integration");
-		menu.addView(repositoriesView, "Repositories", "Repositories");
 		menu.addView(licencesView, "Licences", "Licences");
 		menu.addView(profilesView, "Profiles", "Profiles");
 		menu.addView(buildView, "Build", "Build");
-		
 
 		addComponent(menu);
 		addComponent(viewContainer);

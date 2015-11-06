@@ -11,6 +11,7 @@ import sk.itcloud.cmis.CMISView;
 import sk.itcloud.communication.ChatPanel;
 import sk.itcloud.dashboard.DashboardView;
 import sk.itcloud.maven.settings.views.SettingsView;
+import sk.itcloud.maven.team.TeamView;
 import sk.itcloud.processes.ProcessesView;
 import sk.itcloud.maven.project.ProjectView;
 import sk.itcloud.maven.reports.ReportsView;
@@ -39,6 +40,7 @@ public class MainScreen extends HorizontalLayout
 		menu.addView(new DashboardView(), DashboardView.VIEW_NAME, DashboardView.VIEW_NAME, FontAwesome.DASHBOARD);
 		menu.addView(new ProjectView(), ProjectView.VIEW_NAME, ProjectView.VIEW_NAME, FontAwesome.ARCHIVE);
 		menu.addView(new TasksView(), TasksView.VIEW_NAME, TasksView.VIEW_NAME, FontAwesome.ARCHIVE);
+		menu.addView(new TeamView(), TeamView.VIEW_NAME, TeamView.VIEW_NAME, FontAwesome.ARCHIVE);
 		menu.addView(new CMISView(), CMISView.VIEW_NAME, CMISView.VIEW_NAME, FontAwesome.ARCHIVE);
 		menu.addView(new ProcessesView(), ProcessesView.VIEW_NAME, ProcessesView.VIEW_NAME, FontAwesome.ARCHIVE);
 		menu.addView(new ReportsView(), ReportsView.VIEW_NAME, ReportsView.VIEW_NAME, FontAwesome.ARCHIVE);

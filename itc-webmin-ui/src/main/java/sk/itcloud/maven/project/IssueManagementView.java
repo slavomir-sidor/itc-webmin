@@ -12,26 +12,26 @@ import sk.itcloud.AutoForm;
 import sk.itcloud.GridLayoutView;
 import sk.itcloud.HorizontalTabView;
 import sk.itcloud.maven.model.form.Dependency;
+import sk.itcloud.maven.model.form.IssueManagement;
 import sk.itcloud.maven.model.form.Scm;
 
-public class RepositoriesView extends HorizontalTabView implements View
+public class IssueManagementView extends HorizontalTabView
 {
 
-	public static final String VIEW_NAME = "Repositories";
 	protected AutoForm scmView = new AutoForm();
 	protected AutoForm distributionManagementView;
 
-	public RepositoriesView(Model model)
+	public IssueManagementView(Model model)
 	{
 		super();
-		scmView.setFormData(new Scm());
-		distributionManagementView = new AutoForm();
-		// distributionManagementView.setFormData(new DistributionManagement());
-		getMenu().addView(scmView, "Source Control Management", "Source Control");
-		getMenu().addView(distributionManagementView, "Distribution", "Distribution");
+
+		AutoForm issueManagementView = new AutoForm();
+		issueManagementView.setFormData(new IssueManagement());
+
+		getMenu().addView(issueManagementView, "Issue Management", "Issue Management");
 	}
 
-	public RepositoriesView(Component... children)
+	public IssueManagementView(Component... children)
 	{
 		super(children);
 		// TODO Auto-generated constructor stub

@@ -7,6 +7,9 @@ import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 
+import sk.itcloud.AutoForm;
+import sk.itcloud.maven.model.form.Scm;
+
 public class ProjectMainView extends GridLayout implements View
 {
 	public static final String VIEW_NAME = "Projects";
@@ -19,7 +22,6 @@ public class ProjectMainView extends GridLayout implements View
 	public ProjectMainView()
 	{
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public ProjectMainView(int columns, int rows, Component... children)
