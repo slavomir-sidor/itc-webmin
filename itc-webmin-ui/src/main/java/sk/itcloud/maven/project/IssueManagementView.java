@@ -5,7 +5,9 @@ import org.apache.maven.model.Model;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Component;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.HorizontalSplitPanel;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
 import sk.itcloud.AutoForm;
@@ -15,20 +17,24 @@ import sk.itcloud.maven.model.form.Dependency;
 import sk.itcloud.maven.model.form.IssueManagement;
 import sk.itcloud.maven.model.form.Scm;
 
-public class IssueManagementView extends HorizontalTabView
+public class IssueManagementView extends HorizontalLayout implements View
 {
-
-	protected AutoForm scmView = new AutoForm();
-	protected AutoForm distributionManagementView;
+	public static final String VIEW_NAME = "Issue Management";
 
 	public IssueManagementView(Model model)
 	{
 		super();
 
+		Panel issueManagementPanel = new Panel();
+
 		AutoForm issueManagementView = new AutoForm();
 		issueManagementView.setFormData(new IssueManagement());
 
-		getMenu().addView(issueManagementView, "Issue Management", "Issue Management");
+		addComponent(issueManagementPanel);
+		addComponent(issueManagementView);
+
+		setExpandRatio(issueManagementPanel, 8);
+		setExpandRatio(issueManagementView, 2);
 	}
 
 	public IssueManagementView(Component... children)

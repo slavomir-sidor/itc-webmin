@@ -9,7 +9,9 @@ import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 
-public class ModuleView extends HorizontalLayout implements View
+import sk.itcloud.GridMasterVertical;
+
+public class ModuleView extends GridMasterVertical implements View
 {
 
 	public static final String VIEW_NAME = "Modules";
@@ -21,29 +23,8 @@ public class ModuleView extends HorizontalLayout implements View
 	public ModuleView(Model model)
 	{
 		super();
-
-		list = model.getModules();
-		setSizeFull();
-
-		table = new Table();
-		table.addContainerProperty("Module", String.class, null);
-		table.setSizeFull();
-		table.setData(list);
-
-		grid = new GridLayout();
-		grid.setSizeFull();
-
-		addComponent(table);
-		addComponent(grid);
-
-		setExpandRatio(table, 8);
-		setExpandRatio(grid, 2);
-	}
-
-	public ModuleView(Component... children)
-	{
-		super(children);
-		// TODO Auto-generated constructor stub
+		getTable().addContainerProperty("Module", String.class, null);
+		getTable().setData(model.getModules());
 	}
 
 	@Override

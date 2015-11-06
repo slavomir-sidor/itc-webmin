@@ -7,7 +7,7 @@ import com.vaadin.ui.TreeTable;
  * @author jahman
  *
  */
-public class ProjectTreeTable extends TreeTable
+public class ProjectsView extends TreeTable
 {
 
 	/**
@@ -15,7 +15,7 @@ public class ProjectTreeTable extends TreeTable
 	 */
 	private static final long serialVersionUID = 6478027660729026458L;
 
-	public ProjectTreeTable()
+	public ProjectsView()
 	{
 		super();
 

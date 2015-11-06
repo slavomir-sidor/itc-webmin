@@ -28,23 +28,17 @@ import sk.itcloud.maven.model.form.Organization;
 import sk.itcloud.maven.model.form.Parent;
 import sk.itcloud.maven.model.form.Scm;
 
-public class ProjectDetailOverviewView extends HorizontalTabView
+public class DetailOverviewView extends HorizontalTabView
 {
 
-	public ProjectDetailOverviewView(Model model)
+	public DetailOverviewView(Model model)
 	{
 		super();
-
-		TableView propertiesView = new TableView();
-
-		propertiesView.addContainerProperty("Property", String.class, null);
-		propertiesView.addContainerProperty("Value", String.class, null);
-		propertiesView.setSizeFull();
 
 		getMenu().addView(new ArtifactView(model), "Artifact", "Artifact");
 		getMenu().addView(new ModuleView(model), "Modules", "Modules");
 		getMenu().addView(new DependencyView(model), "Dependency", "Dependency");
-		getMenu().addView(propertiesView, "Properties", "Properties");
+		getMenu().addView(new PropertiesView(model), "Properties", "Properties");
 		getMenu().addView(new ProfilesView(model), "Profiles", "Profiles");
 	}
 

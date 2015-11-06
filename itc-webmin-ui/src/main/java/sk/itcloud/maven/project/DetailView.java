@@ -22,10 +22,10 @@ import com.vaadin.ui.TabSheet;
 
 import sk.itcloud.maven.MavenAPI;
 
-public class ProjectDetailView extends TabSheet
+public class DetailView extends TabSheet
 {
 
-	public ProjectDetailView()
+	public DetailView()
 	{
 		super();
 
@@ -54,12 +54,12 @@ public class ProjectDetailView extends TabSheet
 				MavenProject project = new MavenProject(model);
 
 				addTab(new ArchetypeView()).setCaption("Archetype");
-				addTab(new ProjectDetailOverviewView(model)).setCaption("Artifact");
+				addTab(new DetailOverviewView(model)).setCaption("Artifact");
 				addTab(new RepositoriesView(model)).setCaption("Repositories");
 				addTab(new BuildView(model)).setCaption("Build");
 				addTab(new TeamView(model)).setCaption("Team");
 				addTab(new ProcessesView(model)).setCaption("Processes");
-				addTab(new IssueManagementView(model)).setCaption("Tasks");
+				addTab(new TasksView(model)).setCaption("Tasks");
 				addTab(new DocumentsView(model)).setCaption("Documents");
 
 			} catch (IOException | XmlPullParserException e)

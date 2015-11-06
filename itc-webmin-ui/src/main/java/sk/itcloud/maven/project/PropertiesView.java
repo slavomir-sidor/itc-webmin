@@ -10,12 +10,12 @@ import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalLayout;
 
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
+import sk.itcloud.GridMasterVertical;
 import sk.itcloud.maven.model.form.CiManagement;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class PropertiesView extends VerticalLayout implements View
+public class PropertiesView extends GridMasterVertical implements View
 {
-
 	public static final String VIEW_NAME = "Properties";
 
 	public PropertiesView(Model model)
@@ -23,10 +23,8 @@ public class PropertiesView extends VerticalLayout implements View
 		super();
 		setSizeFull();
 
-		HorizontalLayout table = new HorizontalLayout();
-
-		AutoForm ciView = new AutoForm();
-		ciView.setFormData(new CiManagement());
+		getTable().addContainerProperty("Property", String.class, null);
+		getTable().addContainerProperty("Value", String.class, null);
 
 	}
 
