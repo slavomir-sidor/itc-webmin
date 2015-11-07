@@ -287,12 +287,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.maven</groupId>
-			<artifactId>maven-aether-provider</artifactId>
-			<version>${maven-aether-provider.version}</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.apache.maven.shared</groupId>
 			<artifactId>maven-shared-utils</artifactId>
 			<version>0.7</version>
@@ -319,55 +313,55 @@
 		<dependency>
 			<groupId>org.eclipse.aether</groupId>
 			<artifactId>aether-api</artifactId>
-			<version>${aetherVersion}</version>
+			<version>${eclipse.aether.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.aether</groupId>
 			<artifactId>aether-util</artifactId>
-			<version>${aetherVersion}</version>
+			<version>${eclipse.aether.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.aether</groupId>
 			<artifactId>aether-impl</artifactId>
-			<version>${aetherVersion}</version>
+			<version>${eclipse.aether.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.aether</groupId>
 			<artifactId>aether-connector-basic</artifactId>
-			<version>${aetherVersion}</version>
+			<version>${eclipse.aether.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.aether</groupId>
 			<artifactId>aether-transport-file</artifactId>
-			<version>${aetherVersion}</version>
+			<version>${eclipse.aether.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.aether</groupId>
 			<artifactId>aether-transport-http</artifactId>
-			<version>${aetherVersion}</version>
+			<version>${eclipse.aether.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.eclipse.aether</groupId>
 			<artifactId>aether-transport-wagon</artifactId>
-			<version>${aetherVersion}</version>
+			<version>${eclipse.aether.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-aether-provider</artifactId>
-			<version>${mavenVersion}</version>
+			<version>${eclipse.aether.provider.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.apache.maven.wagon</groupId>
 			<artifactId>wagon-ssh</artifactId>
-			<version>${wagonVersion}</version>
+			<version>${wagon.version}</version>
 		</dependency>
 
 	</dependencies>

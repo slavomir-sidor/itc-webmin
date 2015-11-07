@@ -1,13 +1,12 @@
 package sk.itcloud.maven.project;
 
-import com.vaadin.data.Container;
-import com.vaadin.ui.TreeTable;
+import com.vaadin.ui.Table;
 
 /**
  * @author jahman
  *
  */
-public class ProjectsView extends TreeTable
+public class ProjectsView extends Table
 {
 
 	/**
