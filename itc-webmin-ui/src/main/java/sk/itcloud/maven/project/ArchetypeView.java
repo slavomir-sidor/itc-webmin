@@ -7,6 +7,7 @@ import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 
 import sk.itcloud.AutoForm;
+import sk.itcloud.maven.AetherAPI;
 
 /**
  * @author jahman
@@ -15,7 +16,6 @@ import sk.itcloud.AutoForm;
 public class ArchetypeView extends VerticalLayout
 {
 	protected AutoForm form;
-
 	protected GridLayout grid;
 
 	public ArchetypeView()
@@ -25,7 +25,8 @@ public class ArchetypeView extends VerticalLayout
 		setSizeFull();
 		setWidth("100%");
 		setHeight("100%");
-
+		AetherAPI aetherAPI=new AetherAPI();
+		
 	}
 
 	/**

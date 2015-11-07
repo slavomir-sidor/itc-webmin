@@ -13,6 +13,7 @@ import sk.itcloud.GridMasterVertical;
 import sk.itcloud.HorizontalTabView;
 import sk.itcloud.maven.model.form.Build;
 import sk.itcloud.maven.model.form.Dependency;
+import sk.itcloud.maven.model.form.Extension;
 
 public class BuildExtentionsView extends GridMasterVertical implements View
 {
@@ -23,7 +24,7 @@ public class BuildExtentionsView extends GridMasterVertical implements View
 	{
 		super();
 		getTable().setData(model.getBuild().getExtensions());
-		getForms().get(0).setFormData(new Build());
+		getForms().get(0).setFormData(new Extension());
 	}
 
 	@Override
