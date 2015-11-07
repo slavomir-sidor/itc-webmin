@@ -1,6 +1,9 @@
 package sk.itcloud.maven.project;
 
 import org.apache.maven.model.Model;
+import org.vaadin.hezamu.canvas.Canvas;
+import org.vaadin.svg.SvgComponent;
+
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.Component;
@@ -22,6 +25,9 @@ public class BuildSettingsView extends VerticalLayout implements View
 
 		HorizontalLayout buildPanel = new HorizontalLayout();
 		buildPanel.setSizeFull();
+		Canvas canvas = new Canvas();
+		buildPanel.addComponent(canvas);
+		canvas.fillRect(10, 10, 20, 20);
 
 		AutoForm form = new AutoForm();
 		form.setFormData(new Build());

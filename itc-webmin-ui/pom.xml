@@ -50,6 +50,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>svgcomponent</artifactId>
+			<version>${vaadin.svg.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>itc-webmin-widgetset</artifactId>
 			<version>${project.version}</version>

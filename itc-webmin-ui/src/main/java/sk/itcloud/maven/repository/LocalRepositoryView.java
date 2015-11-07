@@ -6,6 +6,8 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.VerticalLayout;
 
+import sk.itcloud.maven.AetherAPI;
+
 public class LocalRepositoryView extends VerticalLayout implements View
 {
 
@@ -14,6 +16,8 @@ public class LocalRepositoryView extends VerticalLayout implements View
 	public LocalRepositoryView()
 	{
 		super();
+		AetherAPI api = new AetherAPI();
+		
 	}
 
 	@Override

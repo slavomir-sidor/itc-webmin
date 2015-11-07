@@ -23,6 +23,7 @@ public class ModuleView extends GridMasterVertical implements View
 	public ModuleView(Model model)
 	{
 		super();
+
 		getTable().addContainerProperty("Module", String.class, null);
 		getTable().setData(model.getModules());
 	}
