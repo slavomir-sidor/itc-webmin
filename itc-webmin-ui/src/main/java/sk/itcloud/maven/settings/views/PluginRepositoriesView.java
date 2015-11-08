@@ -26,7 +26,9 @@ public class PluginRepositoriesView extends GridMasterVertical implements View
 	public PluginRepositoriesView(List<Repository> pluginGroups)
 	{
 		super();
-		table.setContainerDataSource(new BeanItemContainer<Repository>(Repository.class, pluginGroups));
+
+		getTable().setContainerDataSource(new BeanItemContainer<Repository>(Repository.class, pluginGroups));
+		getForms().get(0).setFormData(new sk.itcloud.maven.model.form.Repository());
 	}
 
 	@Override

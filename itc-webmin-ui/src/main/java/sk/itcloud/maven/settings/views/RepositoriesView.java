@@ -17,7 +17,8 @@ public class RepositoriesView extends GridMasterVertical implements View
 	public RepositoriesView(List<Repository> repositories)
 	{
 		super();
-		table.setContainerDataSource(new BeanItemContainer<Repository>(Repository.class, repositories));
+		//getTable().setContainerDataSource(new BeanItemContainer<Repository>(Repository.class, repositories));
+		getForms().get(0).setFormData(new sk.itcloud.maven.settings.form.Repository());
 	}
 
 	@Override

@@ -32,18 +32,10 @@ public class ProfileView extends HorizontalTabView
 		setDescription("Profile");
 		setSizeFull();
 
-		getMenu().addView(new ProfileMainView(profile), ProfileMainView.VIEW_NAME, ProfileMainView.VIEW_NAME);
 		getMenu().addView(new ActivationView(profile.getActivation()), ActivationView.VIEW_NAME, ActivationView.VIEW_NAME);
 		getMenu().addView(new PropertiesView(profile.getProperties()), PropertiesView.VIEW_NAME, PropertiesView.VIEW_NAME);
-		getMenu().addView(new PluginRepositoriesView(profile.getPluginRepositories()), PluginRepositoriesView.VIEW_NAME,
-				PluginRepositoriesView.VIEW_NAME);
+		getMenu().addView(new PluginRepositoriesView(profile.getPluginRepositories()), PluginRepositoriesView.VIEW_NAME,PluginRepositoriesView.VIEW_NAME);
 		getMenu().addView(new RepositoriesView(profile.getRepositories()), RepositoriesView.VIEW_NAME, RepositoriesView.VIEW_NAME);
-
-		addComponent(menu);
-		addComponent(viewContainer);
-
-		setExpandRatio(viewContainer, 8);
-		setExpandRatio(viewContainer, 2);
 	}
 
 	ViewChangeListener viewChangeListener = new ViewChangeListener()

@@ -5,6 +5,8 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.FormLayout;
 
+import sk.itcloud.AutoForm;
+
 public class ProfileMainView extends FormLayout implements View
 {
 
@@ -12,6 +14,9 @@ public class ProfileMainView extends FormLayout implements View
 
 	public ProfileMainView(Profile profile)
 	{
+		AutoForm form = new AutoForm();
+		form.setFormData(new sk.itcloud.maven.model.form.Profile());
+		addComponent(form);
 	}
 
 	@Override

@@ -6,6 +6,8 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.FormLayout;
 
+import sk.itcloud.AutoForm;
+
 public class ActivationView extends FormLayout implements View
 {
 
@@ -13,7 +15,9 @@ public class ActivationView extends FormLayout implements View
 
 	public ActivationView(Activation activation)
 	{
-		
+		AutoForm form = new AutoForm();
+		form.setFormData(new sk.itcloud.maven.model.form.Activation());
+		addComponent(form);
 	}
 
 	@Override
