@@ -1,13 +1,15 @@
 package sk.itcloud.maven;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
-
+import java.io.IOException;
 import org.apache.maven.model.Model;
 import org.apache.maven.model.io.xpp3.MavenXpp3Reader;
 import org.apache.maven.project.DefaultMavenProjectBuilder;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.settings.DefaultMavenSettingsBuilder;
+import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 
 public class MavenAPI
 {
@@ -20,7 +22,9 @@ public class MavenAPI
 
 	protected MavenXpp3Reader mavenreader;
 
-	protected String pomfile = "/var/www/jahman/domains/itc-webmin.jahman/pom.xml";
+	protected File pomfile;
+
+	protected String pomfilename;
 
 	protected String globalSettingsFileName = "/usr/share/maven/conf/settings.xml";
 
@@ -31,6 +35,12 @@ public class MavenAPI
 	protected DefaultMavenSettingsBuilder settingsBuilder;
 
 	protected DefaultMavenProjectBuilder defaultMavenProjectBuilder;
+
+	public MavenAPI(String pomfilename)
+	{
+		super();
+		setPomfilename(pomfilename);
+	}
 
 	/**
 	 * @return the globalSettingsFileName
@@ -105,6 +115,16 @@ public class MavenAPI
 	 */
 	public FileReader getReader()
 	{
+		if (reader == null)
+		{
+			try
+			{
+				reader = new FileReader(getPomfile());
+			} catch (FileNotFoundException e)
+			{
+				e.printStackTrace();
+			}
+		}
 		return reader;
 	}
 
@@ -122,6 +142,10 @@ public class MavenAPI
 	 */
 	public MavenXpp3Reader getMavenreader()
 	{
+		if (mavenreader == null)
+		{
+			mavenreader = new MavenXpp3Reader();
+		}
 		return mavenreader;
 	}
 
@@ -139,7 +163,16 @@ public class MavenAPI
 	 */
 	public Model getModel()
 	{
-
+		if (model == null)
+		{
+			try
+			{
+				model = getMavenreader().read(getReader());
+			} catch (IOException | XmlPullParserException e)
+			{
+				e.printStackTrace();
+			}
+		}
 		return model;
 	}
 
@@ -157,6 +190,10 @@ public class MavenAPI
 	 */
 	public MavenProject getProject()
 	{
+		if (project == null)
+		{
+			project = new MavenProject(getModel());
+		}
 		return project;
 	}
 
@@ -170,30 +207,13 @@ public class MavenAPI
 	}
 
 	/**
-	 * @return the pomfile
-	 */
-	public String getPomfile()
-	{
-		return pomfile;
-	}
-
-	/**
-	 * @param pomfile
-	 *            the pomfile to set
-	 */
-	public void setPomfile(String pomfile)
-	{
-		this.pomfile = pomfile;
-	}
-
-	/**
 	 * @return the defaultMavenProjectBuilder
 	 */
 	public DefaultMavenProjectBuilder getDefaultMavenProjectBuilder()
 	{
 		if (defaultMavenProjectBuilder == null)
 		{
-			setDefaultMavenProjectBuilder( new DefaultMavenProjectBuilder());
+			setDefaultMavenProjectBuilder(new DefaultMavenProjectBuilder());
 		}
 		return defaultMavenProjectBuilder;
 	}
@@ -205,5 +225,43 @@ public class MavenAPI
 	public void setDefaultMavenProjectBuilder(DefaultMavenProjectBuilder defaultMavenProjectBuilder)
 	{
 		this.defaultMavenProjectBuilder = defaultMavenProjectBuilder;
+	}
+
+	/**
+	 * @return the pomfile
+	 */
+	public File getPomfile()
+	{
+		if (pomfile == null)
+		{
+			pomfile = new File(getPomfilename());
+		}
+		return pomfile;
+	}
+
+	/**
+	 * @param pomfile
+	 *            the pomfile to set
+	 */
+	public void setPomfile(File pomfile)
+	{
+		this.pomfile = pomfile;
+	}
+
+	/**
+	 * @return the pomfilename
+	 */
+	public String getPomfilename()
+	{
+		return pomfilename;
+	}
+
+	/**
+	 * @param pomfilename
+	 *            the pomfilename to set
+	 */
+	public void setPomfilename(String pomfilename)
+	{
+		this.pomfilename = pomfilename;
 	}
 }

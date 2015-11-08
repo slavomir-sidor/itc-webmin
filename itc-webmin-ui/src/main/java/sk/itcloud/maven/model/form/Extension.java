@@ -11,7 +11,7 @@ import java.io.Serializable;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 5, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Build Extentions")
+@FormBean(rows = 3, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Build Extentions")
 public class Extension implements Serializable
 {
 	@FormField(title = "Group Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter")

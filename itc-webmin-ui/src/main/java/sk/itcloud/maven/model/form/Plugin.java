@@ -17,8 +17,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import org.w3c.dom.Element;
 
+import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
+@FormBean(rows = 5, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Plugins")
 public class Plugin implements Serializable
 {
 	@FormField(title = "Group Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter")

@@ -14,11 +14,11 @@ import sk.itcloud.GridMasterVertical;
 import sk.itcloud.maven.model.form.CiManagement;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class PropertiesView extends GridMasterVertical implements View
+public class PropertyView extends GridMasterVertical implements View
 {
 	public static final String VIEW_NAME = "Properties";
 
-	public PropertiesView(Model model)
+	public PropertyView(Model model)
 	{
 		super();
 		setSizeFull();

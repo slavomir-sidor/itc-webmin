@@ -38,7 +38,7 @@ public class DetailOverviewView extends HorizontalTabView
 		getMenu().addView(new ArtifactView(model), "Artifact", "Artifact");
 		getMenu().addView(new ModuleView(model), "Modules", "Modules");
 		getMenu().addView(new DependencyView(model), "Dependency", "Dependency");
-		getMenu().addView(new PropertiesView(model), "Properties", "Properties");
+		getMenu().addView(new PropertyView(model), "Properties", "Properties");
 		getMenu().addView(new ProfilesView(model), "Profiles", "Profiles");
 	}
 

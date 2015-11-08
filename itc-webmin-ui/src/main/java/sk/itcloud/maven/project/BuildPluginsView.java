@@ -1,16 +1,11 @@
 package sk.itcloud.maven.project;
 
 import org.apache.maven.model.Model;
-
+import org.apache.maven.model.Plugin;
+import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import com.vaadin.ui.Component;
-import com.vaadin.ui.HorizontalSplitPanel;
-import com.vaadin.ui.VerticalLayout;
-import eu.livotov.labs.vaadin.autoforms.AutoForm;
 import sk.itcloud.GridMasterVertical;
-import sk.itcloud.maven.model.form.Build;
-import sk.itcloud.maven.model.form.Dependency;
 
 public class BuildPluginsView extends GridMasterVertical implements View
 {
@@ -19,7 +14,9 @@ public class BuildPluginsView extends GridMasterVertical implements View
 	public BuildPluginsView(Model model)
 	{
 		super();
-		getTable().setData(model.getBuild().getPlugins());
+		BeanItemContainer<Plugin> items = new BeanItemContainer<Plugin>(Plugin.class, model.getBuild().getPlugins());
+		getTable().setContainerDataSource(items);
+		getForms().get(0).setFormData(new sk.itcloud.maven.model.form.Plugin());
 	}
 
 	@Override

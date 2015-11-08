@@ -4,14 +4,11 @@ import java.util.List;
 import org.apache.maven.model.Model;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import com.vaadin.ui.Component;
 import com.vaadin.ui.GridLayout;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
+import sk.itcloud.GridMasterHorizontal;
 
-import sk.itcloud.GridMasterVertical;
-
-public class ModuleView extends GridMasterVertical implements View
+public class ModuleView extends GridMasterHorizontal implements View
 {
 
 	public static final String VIEW_NAME = "Modules";
@@ -25,7 +22,12 @@ public class ModuleView extends GridMasterVertical implements View
 		super();
 
 		getTable().addContainerProperty("Module", String.class, null);
-		getTable().setData(model.getModules());
+		List<String> modules = model.getModules();
+
+		for (int i = 0; i < modules.size(); i++)
+		{
+			getTable().addItem(new Object[] { modules.get(i) }, i);
+		}
 	}
 
 	@Override

@@ -33,43 +33,16 @@ public class DetailView extends TabSheet
 		setWidth("100%");
 		setHeight("100%");
 
-		MavenAPI api = new MavenAPI();
+		MavenAPI api = new MavenAPI("/var/www/jahman/domains/itc-webmin.jahman/pom.xml");
+		MavenProject project = api.getProject();
 
-		File file = new File("/var/www/jahman/domains/itc-webmin.jahman/pom.xml");
-
-		DefaultModelBuilder modelBuilder = new DefaultModelBuilder();
-		ProjectBuilderConfiguration config = new DefaultProjectBuilderConfiguration();
-		DefaultMavenProjectBuilder builder = api.getDefaultMavenProjectBuilder();
-		MavenXpp3Reader mavenreader = new MavenXpp3Reader();
-		FileReader reader;
-
-		try
-		{
-			reader = new FileReader(file);
-
-			try
-			{
-
-				Model model = mavenreader.read(reader);
-				MavenProject project = new MavenProject(model);
-
-				addTab(new ArchetypeView()).setCaption("Archetype");
-				addTab(new DetailOverviewView(model)).setCaption("Artifact");
-				addTab(new RepositoriesView(model)).setCaption("Repositories");
-				addTab(new BuildView(model)).setCaption("Build");
-				addTab(new TeamView(model)).setCaption("Team");
-				addTab(new ProcessesView(model)).setCaption("Processes");
-				addTab(new TasksView(model)).setCaption("Tasks");
-				addTab(new DocumentsView(model)).setCaption("Documents");
-
-			} catch (IOException | XmlPullParserException e)
-			{
-				e.printStackTrace();
-			}
-
-		} catch (FileNotFoundException e)
-		{
-			e.printStackTrace();
-		}
+		addTab(new ArchetypeView()).setCaption("Archetype");
+		addTab(new DetailOverviewView(project.getModel())).setCaption("Artifact");
+		addTab(new RepositoriesView(project.getModel())).setCaption("Repositories");
+		addTab(new BuildView(project.getModel())).setCaption("Build");
+		addTab(new TeamView(project.getModel())).setCaption("Team");
+		addTab(new ProcessesView(project.getModel())).setCaption("Processes");
+		addTab(new TasksView(project.getModel())).setCaption("Tasks");
+		addTab(new DocumentsView(project.getModel())).setCaption("Documents");
 	}
 }

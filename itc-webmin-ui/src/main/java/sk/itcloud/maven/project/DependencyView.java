@@ -11,6 +11,8 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.HorizontalSplitPanel;
+import com.vaadin.ui.TabSheet;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.Tree;
 import com.vaadin.ui.VerticalLayout;
 import sk.itcloud.AutoForm;
@@ -24,8 +26,7 @@ public class DependencyView extends VerticalLayout implements View
 	protected HorizontalLayout toolbar;
 	protected HorizontalSplitPanel splitPanel;
 	protected AutoForm form;
-	protected Tree dependency;
-	protected Tree dependencyManagement;
+	protected TabSheet tabSheet;
 
 	public DependencyView(Model model)
 	{
@@ -34,37 +35,35 @@ public class DependencyView extends VerticalLayout implements View
 		BeanItemContainer<org.apache.maven.model.Dependency> dependencyContainer = new BeanItemContainer<org.apache.maven.model.Dependency>(
 				org.apache.maven.model.Dependency.class, model.getDependencies());
 
-		dependency = new Tree("Dependency");
-		dependency.setSizeFull();
-		dependency.addItem("dsdsd");
-		dependency.addItem("dsdsd");
-		dependency.addItem("dsdsd");
-		dependency.addItem("dsdsd");
-		// dependency.setContainerDataSource(dependencyContainer);
-		// dependency.setData(model.getDependencies());
+		toolbar = new HorizontalLayout();
+		HorizontalLayout dependencies = new HorizontalLayout();
 
-		dependencyManagement = new Tree("Dependency Management");
+		Table dependency = new Table("Dependency");
+		dependency.setSizeFull();
+
+		Table dependencyManagement = new Table("Dependency Management");
 		dependencyManagement.setSizeFull();
 
-		toolbar = new HorizontalLayout();
+		dependencies.addComponent(dependency);
+		dependencies.addComponent(dependencyManagement);
 
-		splitPanel = new HorizontalSplitPanel();
-		splitPanel.setSizeFull();
-		splitPanel.setHeight("100%");
-
-		splitPanel.setFirstComponent(dependency);
-		splitPanel.setSecondComponent(dependencyManagement);
+		dependencies.setExpandRatio(dependency, 5);
+		dependencies.setExpandRatio(dependencyManagement, 5);
+		dependencies.setSizeFull();
 
 		form = new AutoForm();
 		form.setFormData(new Dependency());
 
+		tabSheet = new TabSheet();
+		tabSheet.addTab(form, "New");
+
 		addComponent(toolbar);
-		addComponent(splitPanel);
-		addComponent(form);
+		addComponent(dependencies);
+		addComponent(tabSheet);
 
 		setExpandRatio(toolbar, 1);
-		setExpandRatio(splitPanel, 5);
-		setExpandRatio(form, 4);
+		setExpandRatio(dependencies, 6);
+		setExpandRatio(tabSheet, 4);
 	}
 
 	public DependencyView(Component... children)

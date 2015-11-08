@@ -11,10 +11,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
+import eu.livotov.labs.vaadin.autoforms.ann.FormField;
+
+@FormBean(rows = 2, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Profile")
 public class Profile implements Serializable
 {
-
+	@FormField(title = "Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String id = "default";
+	
 	protected Activation activation;
 	protected BuildBase build;
 	protected Profile.Modules modules;
