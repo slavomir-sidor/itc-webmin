@@ -14,6 +14,8 @@
 // Affects the color of content areas, e.g  Panel and Window content, TextField input etc
 //$v-app-background-color: $v-background-color;
 
+$app-background-image: "img/SNV32777.JPG" !default;
+
 // Affects the visual appearance of all components
 //$v-gradient: v-linear 8%;
 //$v-bevel-depth: 30%;
@@ -31,6 +33,22 @@
 
 @mixin mytheme {
   @include valo;
-
-  // Insert your own theme rules here
+  .app-background {
+    @if $app-background-image {
+      background-image: url(#{$app-background-image});
+      background-size: cover;
+      background-position: 50% 50%;
+    }
+  }
+  .valo-menu{
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPwPgMAAWUBGHhhUEcAAAAASUVORK5CYII=);
+    background-repeat:repeat;
+    background-color:transparent;
+  }
+  
+  .view-content{
+    //background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO4WQ8AAjQBWcXaoWAAAAAASUVORK5CYII=);
+    //background-repeat:repeat;
+    background-color:#fff;
+  }
 }

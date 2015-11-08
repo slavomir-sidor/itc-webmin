@@ -26,11 +26,13 @@ public class MainScreen extends HorizontalLayout
 	{
 
 		setStyleName("main-screen");
+		addStyleName("app-background");
 		setSizeFull();
 
 		CssLayout viewContainer = new CssLayout();
 		viewContainer.addStyleName("valo-content");
 		viewContainer.setSizeFull();
+		viewContainer.addStyleName("view-content");
 
 		final Navigator navigator = new Navigator(ui, viewContainer);
 		navigator.setErrorView(ErrorView.class);
@@ -48,6 +50,7 @@ public class MainScreen extends HorizontalLayout
 		menu.addView(new SettingsView(), SettingsView.VIEW_NAME, SettingsView.VIEW_NAME);
 
 		ChatPanel chatPanel = new ChatPanel();
+		chatPanel.addStyleName("view-content");
 
 		addComponent(menu);
 		addComponent(viewContainer);

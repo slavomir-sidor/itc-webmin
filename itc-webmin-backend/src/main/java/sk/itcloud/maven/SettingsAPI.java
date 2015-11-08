@@ -67,7 +67,6 @@ public class SettingsAPI
 		{
 			try
 			{
-				System.out.println(getFile().getAbsolutePath());
 				setSettings(getBuilder().buildSettings(getFile()));
 			} catch (IOException | XmlPullParserException e)
 			{
