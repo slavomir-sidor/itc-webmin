@@ -37,15 +37,15 @@ public class MainScreen extends HorizontalLayout
 		navigator.addViewChangeListener(viewChangeListener);
 
 		Menu menu = new Menu(navigator);
-		menu.addView(new DashboardView(), DashboardView.VIEW_NAME, DashboardView.VIEW_NAME, FontAwesome.DASHBOARD);
-		menu.addView(new ProjectView(), ProjectView.VIEW_NAME, ProjectView.VIEW_NAME, FontAwesome.ARCHIVE);
-		menu.addView(new TasksView(), TasksView.VIEW_NAME, TasksView.VIEW_NAME, FontAwesome.ARCHIVE);
-		menu.addView(new TeamView(), TeamView.VIEW_NAME, TeamView.VIEW_NAME, FontAwesome.ARCHIVE);
-		menu.addView(new CMISView(), CMISView.VIEW_NAME, CMISView.VIEW_NAME, FontAwesome.ARCHIVE);
-		menu.addView(new ProcessesView(), ProcessesView.VIEW_NAME, ProcessesView.VIEW_NAME, FontAwesome.ARCHIVE);
-		menu.addView(new ReportsView(), ReportsView.VIEW_NAME, ReportsView.VIEW_NAME, FontAwesome.ARCHIVE);
-		menu.addView(new RepositoryView(), RepositoryView.VIEW_NAME, RepositoryView.VIEW_NAME, FontAwesome.ARCHIVE);
-		menu.addView(new SettingsView(), SettingsView.VIEW_NAME, SettingsView.VIEW_NAME, FontAwesome.ARCHIVE);
+		menu.addView(new DashboardView(), DashboardView.VIEW_NAME, DashboardView.VIEW_NAME);
+		menu.addView(new ProjectView(), ProjectView.VIEW_NAME, ProjectView.VIEW_NAME);
+		menu.addView(new TasksView(), TasksView.VIEW_NAME, TasksView.VIEW_NAME);
+		menu.addView(new TeamView(), TeamView.VIEW_NAME, TeamView.VIEW_NAME);
+		menu.addView(new CMISView(), CMISView.VIEW_NAME, CMISView.VIEW_NAME);
+		menu.addView(new ProcessesView(), ProcessesView.VIEW_NAME, ProcessesView.VIEW_NAME);
+		menu.addView(new ReportsView(), ReportsView.VIEW_NAME, ReportsView.VIEW_NAME);
+		menu.addView(new RepositoryView(), RepositoryView.VIEW_NAME, RepositoryView.VIEW_NAME);
+		menu.addView(new SettingsView(), SettingsView.VIEW_NAME, SettingsView.VIEW_NAME);
 
 		ChatPanel chatPanel = new ChatPanel();
 

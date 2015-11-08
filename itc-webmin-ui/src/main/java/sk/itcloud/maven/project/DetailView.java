@@ -1,4 +1,4 @@
-package sk.itcloud.maven.model.view;
+package sk.itcloud.maven.project;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,6 +21,14 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
 
 import sk.itcloud.maven.MavenAPI;
+import sk.itcloud.maven.model.view.ArchetypeView;
+import sk.itcloud.maven.model.view.BuildView;
+import sk.itcloud.maven.model.view.DetailOverviewView;
+import sk.itcloud.maven.model.view.DocumentsView;
+import sk.itcloud.maven.model.view.ProcessesView;
+import sk.itcloud.maven.model.view.RepositoriesView;
+import sk.itcloud.maven.model.view.TasksView;
+import sk.itcloud.maven.model.view.TeamView;
 
 public class DetailView extends TabSheet
 {

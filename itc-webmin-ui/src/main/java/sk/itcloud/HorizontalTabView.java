@@ -9,8 +9,6 @@ import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.UI;
 
-import sk.itcloud.maven.project.Menu;
-
 public class HorizontalTabView extends HorizontalLayout implements View
 {
 	protected Menu menu;
