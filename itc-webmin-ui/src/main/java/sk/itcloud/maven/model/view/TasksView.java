@@ -1,4 +1,4 @@
-package sk.itcloud.maven.project;
+package sk.itcloud.maven.model.view;
 
 import org.apache.maven.model.Model;
 
@@ -15,23 +15,14 @@ import sk.itcloud.maven.model.form.Dependency;
 import sk.itcloud.maven.model.form.IssueManagement;
 import sk.itcloud.maven.model.form.Scm;
 
-public class DocumentsView extends HorizontalTabView
+public class TasksView extends HorizontalTabView implements View
 {
+	public static final String VIEW_NAME = "Tasks";
 
-	protected AutoForm scmView = new AutoForm();
-	protected AutoForm distributionManagementView;
-
-	public DocumentsView(Model model)
+	public TasksView(Model model)
 	{
 		super();
-		getMenu().addView(new ReportsView(model), "Reports", "Reports");
-		getMenu().addView(new LicencesView(model), "Licences", "Licences");
-	}
-
-	public DocumentsView(Component... children)
-	{
-		super(children);
-		// TODO Auto-generated constructor stub
+		//getMenu().addView(new IssueManagementView(model), "Issue Management", "Issue Management");
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package sk.itcloud.maven.project;
+package sk.itcloud.maven.model.view;
 
 import org.apache.maven.model.Model;
 
@@ -9,17 +9,25 @@ import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalLayout;
 
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
-import sk.itcloud.GridMasterVertical;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class MailingListView extends GridMasterVertical implements View
+public class ProfilesView extends VerticalLayout implements View
 {
-	public static final String VIEW_NAME = "Mailing List";
 
-	public MailingListView(Model model)
+	public static final String VIEW_NAME = "Profiles";
+
+	HorizontalSplitPanel panel;
+	AutoForm form;
+
+	public ProfilesView(Model model)
 	{
 		super();
-		getTable().setData(model.getMailingLists());
+	}
+
+	public ProfilesView(Component... children)
+	{
+		super(children);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -28,4 +36,5 @@ public class MailingListView extends GridMasterVertical implements View
 		// TODO Auto-generated method stub
 
 	}
+
 }

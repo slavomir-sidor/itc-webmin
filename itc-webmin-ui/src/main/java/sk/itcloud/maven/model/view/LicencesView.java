@@ -1,4 +1,4 @@
-package sk.itcloud.maven.project;
+package sk.itcloud.maven.model.view;
 
 import org.apache.maven.model.Model;
 
@@ -11,20 +11,17 @@ import com.vaadin.ui.VerticalLayout;
 import eu.livotov.labs.vaadin.autoforms.AutoForm;
 import sk.itcloud.maven.model.form.Dependency;
 
-public class ProfilesView extends VerticalLayout implements View
+public class LicencesView extends VerticalLayout implements View
 {
 
-	public static final String VIEW_NAME = "Profiles";
+	public static final String VIEW_NAME = "Licences";
 
-	HorizontalSplitPanel panel;
-	AutoForm form;
-
-	public ProfilesView(Model model)
+	public LicencesView(Model model)
 	{
 		super();
 	}
 
-	public ProfilesView(Component... children)
+	public LicencesView(Component... children)
 	{
 		super(children);
 		// TODO Auto-generated constructor stub
@@ -36,5 +33,4 @@ public class ProfilesView extends VerticalLayout implements View
 		// TODO Auto-generated method stub
 
 	}
-
 }

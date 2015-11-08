@@ -17,12 +17,14 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
 import sk.itcloud.ErrorView;
+import sk.itcloud.Menu;
 
-public class ProfileView extends HorizontalLayout
+public class ProfileView extends Menu
 {
 
 	public ProfileView(Profile profile)
 	{
+		super();
 		setWidth("100%");
 		setHeight("100%");
 		setSizeFull();

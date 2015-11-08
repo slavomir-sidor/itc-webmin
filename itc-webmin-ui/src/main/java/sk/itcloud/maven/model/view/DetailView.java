@@ -1,4 +1,4 @@
-package sk.itcloud.maven.project;
+package sk.itcloud.maven.model.view;
 
 import java.io.File;
 import java.io.FileNotFoundException;

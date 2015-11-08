@@ -1,4 +1,4 @@
-package sk.itcloud.maven.project;
+package sk.itcloud.maven.model.view;
 
 import org.apache.maven.model.Developer;
 import org.apache.maven.model.DistributionManagement;
