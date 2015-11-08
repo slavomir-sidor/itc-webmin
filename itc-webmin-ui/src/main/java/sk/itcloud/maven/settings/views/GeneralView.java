@@ -20,7 +20,6 @@ public class GeneralView extends HorizontalTabView
 	public GeneralView(Settings settings)
 	{
 		super();
-
 		getMenu().addView(new MainView(settings), MainView.VIEW_NAME, MainView.VIEW_NAME);
 		getMenu().addView(new ProfilesView(settings.getProfiles()), ProfilesView.VIEW_NAME, ProfilesView.VIEW_NAME);
 		getMenu().addView(new ServersViews(settings.getServers()), ServersViews.VIEW_NAME, ServersViews.VIEW_NAME);

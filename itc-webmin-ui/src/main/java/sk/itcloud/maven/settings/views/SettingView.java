@@ -18,15 +18,17 @@ public class SettingView extends TabSheet
 	protected String fileName;
 	protected SettingsAPI api;
 
-	public SettingView(String fileName)
+	public SettingView(SettingsAPI settingsAPI)
 	{
 		super();
+
 		setSizeFull();
 		setWidth("100%");
 		setHeight("100%");
 
-		api = new SettingsAPI(fileName);
+		api = settingsAPI;
 		Settings settings = api.getSettings();
+
 		List<Profile> profiles = settings.getProfiles();
 
 		addTab(new GeneralView(settings), "Settings");

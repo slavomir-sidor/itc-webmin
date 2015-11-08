@@ -18,6 +18,7 @@ import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.TwinColSelect;
 
+import sk.itcloud.AutoForm;
 import sk.itcloud.maven.MavenAPI;
 
 public class MainView extends GridLayout implements View
@@ -28,14 +29,13 @@ public class MainView extends GridLayout implements View
 	public MainView(Settings settings)
 	{
 		super(2, 2);
-
+		setSizeFull();
 		PropertysetItem item = new PropertysetItem();
 		// item.addItemProperty("file", new ObjectProperty<String>(runtimeInfo.getFile().getAbsolutePath().toString()));
 		// item.addItemProperty("localRepositorySourceLevel", new ObjectProperty<String>(runtimeInfo.getLocalRepositorySourceLevel()));
 
-		FormLayout form = new FormLayout();
-		FieldGroup binder = new FieldGroup(item);
-		binder.bindMemberFields(form);
+		AutoForm form = new AutoForm();
+		form.setFormData(new sk.itcloud.maven.settings.form.Settings());
 
 		BeanItemContainer<Profile> profiles = new BeanItemContainer<Profile>(Profile.class, settings.getProfiles());
 		TwinColSelect select = new TwinColSelect("Active Profiles");

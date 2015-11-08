@@ -5,6 +5,8 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.TabSheet;
 
+import sk.itcloud.maven.SettingsAPI;
+
 public class SettingsView extends TabSheet implements View
 {
 
@@ -18,8 +20,8 @@ public class SettingsView extends TabSheet implements View
 		setWidth("100%");
 		setHeight("100%");
 
-		addTab(new SettingView("/var/www/jahman/.m2/settings.xml"), "User Settings");
-		//addTab(new SettingView("/usr/share/maven/conf/settings.xml"), "Global Settings");
+		addTab(new SettingView(new SettingsAPI("/var/www/jahman/.m2/settings.xml")), "User Settings");
+		addTab(new SettingView(new SettingsAPI("/usr/share/maven/conf/settings.xml")), "Global Settings");
 
 	}
 

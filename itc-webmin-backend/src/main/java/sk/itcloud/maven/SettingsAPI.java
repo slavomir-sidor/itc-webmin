@@ -8,12 +8,13 @@ import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 
 public class SettingsAPI
 {
-
 	protected String fileName = "~/.m2/settings.xml";
 
 	protected File file;
 
 	protected DefaultMavenSettingsBuilder builder;
+
+	protected Settings settings;
 
 	/**
 	 * @return the file
@@ -22,7 +23,7 @@ public class SettingsAPI
 	{
 		if (this.file == null)
 		{
-			new File(getFileName());
+			this.file=new File(getFileName());
 		}
 		return file;
 	}
@@ -66,6 +67,7 @@ public class SettingsAPI
 		{
 			try
 			{
+				System.out.println(getFile().getAbsolutePath());
 				setSettings(getBuilder().buildSettings(getFile()));
 			} catch (IOException | XmlPullParserException e)
 			{
@@ -84,8 +86,6 @@ public class SettingsAPI
 	{
 		this.settings = settings;
 	}
-
-	public Settings settings;
 
 	/**
 	 * @return the fileName

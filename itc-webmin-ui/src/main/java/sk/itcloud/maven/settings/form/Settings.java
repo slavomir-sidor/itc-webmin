@@ -19,13 +19,13 @@ public class Settings
 	@FormField(title = "Local Repository", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter ")
 	protected String localRepository;
 
-	@FormField(title = "Connection", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter ")
+	@FormField(title = "Interactive Mode", location = "0,1", required = false, requiredFieldErrorMessage = "Please enter ")
 	protected Boolean interactiveMode = true;
 
-	@FormField(title = "Connection", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter ")
+	@FormField(title = "Use Plugin Registry", location = "0,2", required = false, requiredFieldErrorMessage = "Please enter ")
 	protected Boolean usePluginRegistry = false;
 
-	@FormField(title = "Connection", location = "0,3", required = true, requiredFieldErrorMessage = "Please enter ")
+	@FormField(title = "Offline", location = "0,3", required = false, requiredFieldErrorMessage = "Please enter ")
 	protected Boolean offline = false;
 
 	protected Settings.Proxies proxies;
