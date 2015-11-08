@@ -22,7 +22,8 @@ public class ProfilesView extends GridMasterVertical implements View
 	public ProfilesView(List<Profile> beans)
 	{
 		super();
-		table.setContainerDataSource(new BeanItemContainer<Profile>(Profile.class, beans));
+		getTable().setContainerDataSource(new BeanItemContainer<Profile>(Profile.class, beans));
+		getForms().get(0).setFormData(new sk.itcloud.maven.model.form.Profile());
 	}
 
 	@Override

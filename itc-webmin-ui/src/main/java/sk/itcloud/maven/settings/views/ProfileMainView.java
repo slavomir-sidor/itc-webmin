@@ -12,7 +12,6 @@ public class ProfileMainView extends FormLayout implements View
 
 	public ProfileMainView(Profile profile)
 	{
-
 	}
 
 	@Override

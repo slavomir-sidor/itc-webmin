@@ -15,17 +15,18 @@ import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 
+import sk.itcloud.GridMasterHorizontal;
 import sk.itcloud.GridMasterVertical;
 
-public class PluginGroupsView extends GridMasterVertical implements View
+public class PluginGroupsView extends GridMasterHorizontal implements View
 {
-
 	public static final String VIEW_NAME = "Plugin Groups";
 
 	public PluginGroupsView(List<String> pluginGroups)
 	{
 		super();
-		table.setContainerDataSource(new BeanItemContainer<String>(String.class, pluginGroups));
+		getTable().setContainerDataSource(new BeanItemContainer<String>(String.class, pluginGroups));
+		// getForms().get(0).setFormData();
 	}
 
 	@Override

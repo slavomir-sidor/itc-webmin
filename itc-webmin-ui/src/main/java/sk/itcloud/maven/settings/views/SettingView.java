@@ -21,7 +21,6 @@ public class SettingView extends TabSheet
 	public SettingView(String fileName)
 	{
 		super();
-
 		setSizeFull();
 		setWidth("100%");
 		setHeight("100%");
@@ -30,7 +29,7 @@ public class SettingView extends TabSheet
 		Settings settings = api.getSettings();
 		List<Profile> profiles = settings.getProfiles();
 
-		addTab(new GeneralView(settings),"Settings");
+		addTab(new GeneralView(settings), "Settings");
 
 		for (int i = 0; i < profiles.size(); i++)
 		{

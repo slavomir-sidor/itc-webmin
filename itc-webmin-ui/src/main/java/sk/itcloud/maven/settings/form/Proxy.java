@@ -3,14 +3,14 @@ package sk.itcloud.maven.settings.form;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 6, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Proxy")
+@FormBean(rows = 4, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Proxy")
 public class Proxy
 {
-	@FormField(title = "Active", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter")
-	protected Boolean active = false;
+	@FormField(title = "Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter")
+	protected String id;
 
-	@FormField(title = "Id", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter")
-	protected String protocol;
+	@FormField(title = "Active", location = "0,1", required = false, requiredFieldErrorMessage = "Please enter")
+	protected Boolean active = false;
 
 	@FormField(title = "Username", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String username;
@@ -18,17 +18,17 @@ public class Proxy
 	@FormField(title = "Password", location = "0,3", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String password;
 
-	@FormField(title = "Password", location = "0,4", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Port", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter")
 	protected Integer port = 8080;
 
-	@FormField(title = "Host", location = "0,5", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Protocol", location = "1,1", required = true, requiredFieldErrorMessage = "Please enter")
+	protected String protocol;
+
+	@FormField(title = "Host", location = "1,2", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String host;
 
-	@FormField(title = "Non Proxy Hosts", location = "0,6", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Non Proxy Hosts", location = "1,3", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String nonProxyHosts;
-
-	@FormField(title = "Id", location = "0,7", required = true, requiredFieldErrorMessage = "Please enter")
-	protected String id;
 
 	/**
 	 * Gets the value of the active property.

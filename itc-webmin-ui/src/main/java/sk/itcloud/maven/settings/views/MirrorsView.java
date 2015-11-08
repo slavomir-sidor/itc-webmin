@@ -18,13 +18,14 @@ public class MirrorsView extends GridMasterVertical implements View
 {
 
 	public static final String VIEW_NAME = "Mirrors";
-	
+
 	BeanItem<Mirror> item;
 
 	public MirrorsView(List<Mirror> beans)
 	{
 		super();
-		table.setContainerDataSource(new BeanItemContainer<Mirror>(Mirror.class, beans));
+		getTable().setContainerDataSource(new BeanItemContainer<Mirror>(Mirror.class, beans));
+		getForms().get(0).setFormData(new sk.itcloud.maven.settings.form.Mirror());
 	}
 
 	@Override

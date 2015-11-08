@@ -17,9 +17,10 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
 
 import sk.itcloud.ErrorView;
+import sk.itcloud.HorizontalTabView;
 import sk.itcloud.Menu;
 
-public class ProfileView extends Menu
+public class ProfileView extends HorizontalTabView
 {
 
 	public ProfileView(Profile profile)
@@ -31,21 +32,12 @@ public class ProfileView extends Menu
 		setDescription("Profile");
 		setSizeFull();
 
-		CssLayout viewContainer = new CssLayout();
-		viewContainer.addStyleName("valo-content");
-		viewContainer.setSizeFull();
-
-		final Navigator navigator = new Navigator(UI.getCurrent(), viewContainer);
-		navigator.setErrorView(ErrorView.class);
-		navigator.addViewChangeListener(viewChangeListener);
-
-		SettingsMenu menu = new SettingsMenu(navigator);
-
-		menu.addView(new ProfileMainView(profile), ProfileMainView.VIEW_NAME, ProfileMainView.VIEW_NAME);
-		menu.addView(new ActivationView(profile.getActivation()), ActivationView.VIEW_NAME, ActivationView.VIEW_NAME);
-		menu.addView(new PropertiesView(profile.getProperties()), PropertiesView.VIEW_NAME, PropertiesView.VIEW_NAME);
-		menu.addView(new PluginRepositoriesView(profile.getPluginRepositories()), PluginRepositoriesView.VIEW_NAME, PluginRepositoriesView.VIEW_NAME);
-		menu.addView(new RepositoriesView(profile.getRepositories()), RepositoriesView.VIEW_NAME, RepositoriesView.VIEW_NAME);
+		getMenu().addView(new ProfileMainView(profile), ProfileMainView.VIEW_NAME, ProfileMainView.VIEW_NAME);
+		getMenu().addView(new ActivationView(profile.getActivation()), ActivationView.VIEW_NAME, ActivationView.VIEW_NAME);
+		getMenu().addView(new PropertiesView(profile.getProperties()), PropertiesView.VIEW_NAME, PropertiesView.VIEW_NAME);
+		getMenu().addView(new PluginRepositoriesView(profile.getPluginRepositories()), PluginRepositoriesView.VIEW_NAME,
+				PluginRepositoriesView.VIEW_NAME);
+		getMenu().addView(new RepositoriesView(profile.getRepositories()), RepositoriesView.VIEW_NAME, RepositoriesView.VIEW_NAME);
 
 		addComponent(menu);
 		addComponent(viewContainer);

@@ -10,7 +10,7 @@ package sk.itcloud.maven.settings.form;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 6, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Activation Property")
+@FormBean(rows = 2, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Activation Property")
 public class ActivationProperty
 {
 

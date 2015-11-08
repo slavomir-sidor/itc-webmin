@@ -18,7 +18,8 @@ public class ServersViews extends GridMasterVertical implements View
 	public ServersViews(List<Server> servers)
 	{
 		super();
-		table.setContainerDataSource(new BeanItemContainer<Server>(Server.class, servers));
+		getTable().setContainerDataSource(new BeanItemContainer<Server>(Server.class, servers));
+		getForms().get(0).setFormData(new sk.itcloud.maven.settings.form.Server());
 	}
 
 	@Override

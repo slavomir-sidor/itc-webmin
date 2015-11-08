@@ -18,7 +18,8 @@ public class ProxiesView extends GridMasterVertical implements View
 	public ProxiesView(List<Proxy> beans)
 	{
 		super();
-		table.setContainerDataSource(new BeanItemContainer<Proxy>(Proxy.class, beans));
+		getTable().setContainerDataSource(new BeanItemContainer<Proxy>(Proxy.class, beans));
+		getForms().get(0).setFormData(new sk.itcloud.maven.settings.form.Proxy());
 	}
 
 	@Override

@@ -12,7 +12,7 @@ import java.util.List;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 4, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Source Control Management")
+@FormBean(rows = 4, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Settings")
 public class Settings
 {
 

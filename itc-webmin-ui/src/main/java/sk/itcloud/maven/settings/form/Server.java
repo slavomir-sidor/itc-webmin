@@ -14,32 +14,31 @@ import org.w3c.dom.Element;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 4, columns = 1, cancelButtonVisible = false, commitButtonVisible = false, title = "Server")
+@FormBean(rows = 3, columns = 3, cancelButtonVisible = false, commitButtonVisible = false, title = "Server")
 public class Server
 {
+	@FormField(title = "Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter")
+	protected String id;
 
-	@FormField(title = "Username", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Username", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String username;
 
-	@FormField(title = "Password", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Password", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String password;
 
-	@FormField(title = "Private Key", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Private Key", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String privateKey;
 
-	@FormField(title = "Password", location = "0,3", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Password", location = "1,1", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String passphrase;
 
-	@FormField(title = "File Permissions", location = "0,4", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "File Permissions", location = "2,0", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String filePermissions;
 
-	@FormField(title = "Directory Permissions", location = "0,5", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Directory Permissions", location = "2,1", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String directoryPermissions;
 
 	protected Server.Configuration configuration;
-
-	@FormField(title = "Od", location = "0,6", required = true, requiredFieldErrorMessage = "Please enter")
-	protected String id;
 
 	/**
 	 * Gets the value of the username property.
