@@ -3,20 +3,20 @@ package sk.itcloud.maven.settings.form;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 
-@FormBean(rows = 4, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Proxy")
+@FormBean(rows = 5, columns = 2, cancelButtonVisible = false, commitButtonVisible = false, title = "Proxy")
 public class Proxy
 {
 	@FormField(title = "Id", location = "0,0", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String id;
 
-	@FormField(title = "Active", location = "0,1", required = false, requiredFieldErrorMessage = "Please enter")
-	protected Boolean active = false;
-
-	@FormField(title = "Username", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Username", location = "0,1", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String username;
 
-	@FormField(title = "Password", location = "0,3", required = true, requiredFieldErrorMessage = "Please enter")
+	@FormField(title = "Password", location = "0,2", required = true, requiredFieldErrorMessage = "Please enter")
 	protected String password;
+
+	@FormField(title = "Active", location = "0,3", required = false, requiredFieldErrorMessage = "Please enter")
+	protected Boolean active = false;
 
 	@FormField(title = "Port", location = "1,0", required = true, requiredFieldErrorMessage = "Please enter")
 	protected Integer port = 8080;
