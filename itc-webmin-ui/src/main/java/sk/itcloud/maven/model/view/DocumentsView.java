@@ -24,8 +24,8 @@ public class DocumentsView extends HorizontalTabView
 	public DocumentsView(Model model)
 	{
 		super();
-		getMenu().addView(new ReportsView(model), "Reports", "Reports");
-		getMenu().addView(new LicencesView(model), "Licences", "Licences");
+		getMenu().addView(new ReportsView(model.getReporting()), "Reports", "Reports");
+		getMenu().addView(new LicencesView(model.getLicenses()), "Licences", "Licences");
 	}
 
 	public DocumentsView(Component... children)

@@ -1,28 +1,24 @@
 package sk.itcloud.maven.model.view;
 
 import org.apache.maven.model.Model;
-
+import org.apache.maven.model.Reporting;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import com.vaadin.ui.GridLayout;
-import com.vaadin.ui.TabSheet;
+
+import sk.itcloud.HorizontalTabView;
 
 /**
  * @author jahman
  *
  */
-public class ReportsView extends GridLayout implements View
+public class ReportsView extends HorizontalTabView implements View
 {
 
 	public static final String VIEW_NAME = "Build";
 
-	public ReportsView(Model model)
+	public ReportsView(Reporting reporting)
 	{
 		super();
-
-		setSizeFull();
-		setWidth("100%");
-		setHeight("100%");
 	}
 
 	@Override

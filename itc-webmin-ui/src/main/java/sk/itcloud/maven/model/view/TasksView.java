@@ -22,7 +22,7 @@ public class TasksView extends HorizontalTabView implements View
 	public TasksView(Model model)
 	{
 		super();
-		//getMenu().addView(new IssueManagementView(model), "Issue Management", "Issue Management");
+		getMenu().addView(new IssueManagementView(model.getIssueManagement()), "Issue Management", "Issue Management");
 	}
 
 	@Override

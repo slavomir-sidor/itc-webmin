@@ -21,7 +21,7 @@ public class DeveloperView extends GridMasterVertical implements View
 	public DeveloperView(Model model)
 	{
 		super();
-		setSizeFull();
+
 		getTable().setContainerDataSource(new BeanItemContainer<Developer>(Developer.class, model.getDevelopers()));
 		getForms().get(0).setFormData(new sk.itcloud.maven.model.form.Developer());
 	}

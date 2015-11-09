@@ -31,15 +31,13 @@ public class TeamView extends HorizontalTabView implements View
 		super();
 		setSizeFull();
 
-		mailingListView = new MailingListView(model);
-
 		organizationView = new AutoForm();
 		organizationView.setFormData(new Organization());
 
 		team = new GridLayoutView(2, 1);
 		team.setSizeFull();
 		team.addComponent(organizationView);
-		team.addComponent(mailingListView);
+		team.addComponent(new MailingListView(model.getMailingLists()));
 
 		developersView.setSizeFull();
 		developersView.getTable().setContainerDataSource(new BeanItemContainer<Developer>(Developer.class, model.getDevelopers()));
