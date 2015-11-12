@@ -25,6 +25,5 @@ public class ReportsView extends HorizontalTabView implements View
 	public void enter(ViewChangeEvent event)
 	{
 		// TODO Auto-generated method stub
-
 	}
 }

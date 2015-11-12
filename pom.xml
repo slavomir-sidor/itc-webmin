@@ -38,6 +38,7 @@
 		<eclipse.aether.provider.version>3.1.0</eclipse.aether.provider.version>
 		<wagon.version>2.4</wagon.version>
 		<junit.version>4.12</junit.version>
+		<jldap.version>1.0.0-M18</jldap.version>
 		<project.source.version>1.7</project.source.version>
 		<project.target.version>1.7</project.target.version>
 		<project.encoding>UTF-8</project.encoding>

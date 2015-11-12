@@ -17,14 +17,10 @@ public class TeamView extends TabSheet implements View
 	public TeamView(Component... components)
 	{
 		super(components);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event)
 	{
-		// TODO Auto-generated method stub
-
 	}
-
 }
